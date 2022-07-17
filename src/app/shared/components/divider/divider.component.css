@@ -1,0 +1,17 @@
+:host {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+}
+
+.label {
+    color: var(--c-dark-60);
+}
+
+.divider {
+    background-color: var(--c-dark-10);
+    flex: 1;
+    height: 1px;
+}

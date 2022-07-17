@@ -1,0 +1,41 @@
+:host {
+    display: contents;
+}
+
+.content-window {
+    align-items: center;
+    background-color: var(--c-white-10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 840px;
+    padding: 24px 32px;
+    width: 100%;
+}
+
+.content-window > * {
+    width: 100%;
+}
+
+.buttons-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.tertiary-button {
+    color: var(--c-primary-60);
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.tertiary-button:hover {
+    color: var(--c-primary-70);
+}
+
+.tertiary-button:active {
+    color: var(--c-primary-90);
+}

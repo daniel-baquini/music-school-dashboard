@@ -6,13 +6,15 @@
 }
 
 .body {
+    display: flex;
     flex: 1;
+    flex-direction: column;
     height: 100%;
     overflow: auto;
 }
 
 .content {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex: 1;
     flex-direction: column;

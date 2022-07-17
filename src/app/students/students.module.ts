@@ -2,17 +2,23 @@ import { EnrollmentPageComponent } from './enrollment-page/enrollment-page.compo
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { EnrollmentDetailComponent } from './enrollment-detail/enrollment-detail.component';
 
 const studentsRoutes: Routes = [
     {
         component: EnrollmentPageComponent,
         path: ""
+    },
+    {
+        component: EnrollmentDetailComponent,
+        path: "enrollment-detail/:id"
     }
 ]
 
 @NgModule({
     declarations: [
-        EnrollmentPageComponent
+        EnrollmentPageComponent,
+        EnrollmentDetailComponent
     ],
     imports: [
         RouterModule.forChild(studentsRoutes),
