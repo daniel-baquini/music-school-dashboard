@@ -1,5 +1,5 @@
-import { EnrollmentDetailComponent } from './enrollment-detail/enrollment-detail.component';
-import { EnrollmentPageComponent } from './enrollment-page/enrollment-page.component';
+import { EnrollmentDetailPageComponent } from './enrollment-detail-page/enrollment-detail-page.component';
+import { EnrollmentsPageComponent } from './enrollments-page/enrollments-page.component';
 import { NgModule } from '@angular/core';
 import { PlanDetailPageComponent } from './plan-detail-page/plan-detail-page.component';
 import { PlansPageComponent } from './plans-page/plans-page.component';
@@ -14,11 +14,11 @@ const studentsRoutes: Routes = [
         redirectTo: ""
     },
     {
-        component: EnrollmentPageComponent,
+        component: EnrollmentsPageComponent,
         path: "enrollments"
     },
     {
-        component: EnrollmentDetailComponent,
+        component: EnrollmentDetailPageComponent,
         path: "enrollments/detail/:id"
     },
     {
@@ -44,8 +44,8 @@ export const studentsTopLinks: TopMenuLink[] = [
 
 @NgModule({
     declarations: [
-        EnrollmentDetailComponent,
-        EnrollmentPageComponent,
+        EnrollmentDetailPageComponent,
+        EnrollmentsPageComponent,
         PlansPageComponent,
         PlanDetailPageComponent
     ],
