@@ -11,7 +11,7 @@ const studentsRoutes: Routes = [
     {
         path: "",
         pathMatch: "full",
-        redirectTo: ""
+        redirectTo: "enrollments"
     },
     {
         component: EnrollmentsPageComponent,

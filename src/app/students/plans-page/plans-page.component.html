@@ -1,48 +1,43 @@
-<app-default-page
+<app-default-data-page
     [links]="this.links"
     [pageTitle]="'Alunos'"
 >
-    <div class="content-window global-shadow">
-        <div class="table-options">
-            <app-bordered-field></app-bordered-field>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Aluno</th>
-                    <th>Curso</th>
-                    <th>Preço</th>
-                    <th>Início</th>
-                    <th>Vencimento</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td>Andriy Belo Pegado</td>
-                    <td>Guitarra</td>
-                    <td>{{ 900 | currency }}</td>
-                    <td>14/07/2022</td>
-                    <td>14/09/2022</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Diogo Bairros Amorim</td>
-                    <td>Guitarra</td>
-                    <td>{{ 900 | currency }}</td>
-                    <td>14/07/2022</td>
-                    <td>14/09/2022</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Levi Lage Belchior</td>
-                    <td>Guitarra</td>
-                    <td>{{ 900 | currency }}</td>
-                    <td>14/07/2022</td>
-                    <td>14/09/2022</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</app-default-page>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Aluno</th>
+                <th>Curso</th>
+                <th>Preço</th>
+                <th>Início</th>
+                <th>Vencimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Andriy Belo Pegado</td>
+                <td>Guitarra</td>
+                <td>{{ 900 | currency }}</td>
+                <td>14/07/2022</td>
+                <td>14/09/2022</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Diogo Bairros Amorim</td>
+                <td>Guitarra</td>
+                <td>{{ 900 | currency }}</td>
+                <td>14/07/2022</td>
+                <td>14/09/2022</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Levi Lage Belchior</td>
+                <td>Guitarra</td>
+                <td>{{ 900 | currency }}</td>
+                <td>14/07/2022</td>
+                <td>14/09/2022</td>
+            </tr>
+        </tbody>
+    </table>
+</app-default-data-page>

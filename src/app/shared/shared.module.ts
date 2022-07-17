@@ -1,5 +1,7 @@
 import { BorderedFieldComponent } from './components/bordered-field/bordered-field.component';
 import { CommonModule } from '@angular/common';
+import { DefaultDataPageComponent } from './components/default-data-page/default-data-page.component';
+import { DefaultDetailPageComponent } from './components/default-detail-page/default-detail-page.component';
 import { DefaultPageComponent } from './components/default-page/default-page.component';
 import { DividerComponent } from './components/divider/divider.component';
 import { LogoComponent } from './components/logo/logo.component';
@@ -14,6 +16,8 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
 @NgModule({
     declarations: [
         BorderedFieldComponent,
+        DefaultDataPageComponent,
+        DefaultDetailPageComponent,
         DefaultPageComponent,
         DividerComponent,
         LogoComponent,
@@ -21,11 +25,13 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent
+        TopMenuComponent        
     ],
     exports: [
         BorderedFieldComponent,
         CommonModule,
+        DefaultDataPageComponent,
+        DefaultDetailPageComponent,
         DefaultPageComponent,
         DividerComponent,
         LogoComponent,

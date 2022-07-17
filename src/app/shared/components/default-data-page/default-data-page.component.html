@@ -1,0 +1,16 @@
+<app-default-page
+    [links]="this.links"
+    [pageTitle]="this.pageTitle"
+>
+    <div class="content-window global-shadow">
+        <div class="table-options">
+            <app-primary-button
+                [label]="'Novo registro'"
+                [routerLink]="this.newRegistryLink"
+                *ngIf="this.newRegistryLink !== undefined"
+            ></app-primary-button>
+            <app-bordered-field></app-bordered-field>
+        </div>
+        <ng-content></ng-content>
+    </div>
+</app-default-page>

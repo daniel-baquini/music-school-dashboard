@@ -1,19 +1,13 @@
-<app-default-page
+<app-default-detail-page
     [links]="this.links"
     [pageTitle]="'Avisos'"
 >
-    <div class="content-window global-shadow">
-        <div class="grid">
-            <div class="col-4">
-                <app-bordered-field [label]="'Título'"></app-bordered-field>
-            </div>
-            <div class="col-8">
-                <app-bordered-field [label]="'Conteúdo'"></app-bordered-field>
-            </div>
+    <div class="grid">
+        <div class="col-4">
+            <app-bordered-field [label]="'Título'"></app-bordered-field>
         </div>
-        <div class="buttons-row">
-            <span class="tertiary-button text-preset-350">Cancelar</span>
-            <app-primary-button [label]="'Salvar'"></app-primary-button>
+        <div class="col-8">
+            <app-bordered-field [label]="'Conteúdo'"></app-bordered-field>
         </div>
     </div>
-</app-default-page>
+</app-default-detail-page>

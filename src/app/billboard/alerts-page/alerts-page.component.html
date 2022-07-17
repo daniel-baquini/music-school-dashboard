@@ -1,37 +1,32 @@
-<app-default-page
+<app-default-data-page
     [links]="this.links"
+    [newRegistryLink]="'/billboard/alerts/detail/new'"
     [pageTitle]="'Avisos'"
 >
-    <div class="content-window global-shadow">
-        <div class="table-options">
-            <app-primary-button [label]="'Novo registro'"></app-primary-button>
-            <app-bordered-field></app-bordered-field>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Aviso</th>
-                    <th>Conteúdo</th>
-                    <th>Data</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td>Andriy Belo Pegado</td>
-                    <td>No dia 16/07/2022 estaremos fechados para reformas, agradecemos a compreensão.</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Diogo Bairros Amorim</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Levi Lage Belchior</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</app-default-page>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Aviso</th>
+                <th>Conteúdo</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Andriy Belo Pegado</td>
+                <td>No dia 16/07/2022 estaremos fechados para reformas, agradecemos a compreensão.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Diogo Bairros Amorim</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Levi Lage Belchior</td>
+            </tr>
+        </tbody>
+    </table>
+</app-default-data-page>

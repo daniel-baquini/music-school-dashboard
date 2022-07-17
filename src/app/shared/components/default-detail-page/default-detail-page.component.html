@@ -1,0 +1,12 @@
+<app-default-page
+    [links]="this.links"
+    [pageTitle]="this.pageTitle"
+>
+    <div class="content-window global-shadow">
+        <ng-content></ng-content>
+        <div class="buttons-row">
+            <span class="tertiary-button text-preset-350">Cancelar</span>
+            <app-primary-button [label]="'Salvar'"></app-primary-button>
+        </div>
+    </div>
+</app-default-page>
