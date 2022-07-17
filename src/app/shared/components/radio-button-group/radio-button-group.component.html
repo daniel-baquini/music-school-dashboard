@@ -1,0 +1,18 @@
+<div class="field-group">
+    <div class="field-group__label-wrapper">
+        <div class="label-wrapper__left-border"></div>
+        <span class="label-wrapper__label text-preset-290" *ngIf="this.label != ''">{{this.label}}</span>
+        <div class="label-wrapper__right-border"></div>
+    </div>
+    <div class="field-group__field-wrapper">
+        <div class="field-wrapper__option">
+            <input [name]="this.name" type="radio">
+            <span class="option__label text-preset-360">Sim</span>
+        </div>
+        <div class="field-wrapper__option">
+            <input [name]="this.name" type="radio">
+            <span class="option__label text-preset-360">Não</span>
+        </div>
+    </div>
+</div>
+<span class="error-message text-preset-360">Mensagem de erro</span>

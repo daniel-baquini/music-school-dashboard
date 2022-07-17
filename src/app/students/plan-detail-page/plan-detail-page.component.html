@@ -1,0 +1,31 @@
+<app-default-page
+    [links]="this.links"
+    [pageTitle]="'Alunos'"
+>
+    <div class="content-window global-shadow">
+        <div class="grid">
+            <div class="col-8">
+                <app-photo-upload></app-photo-upload>
+            </div>
+            <div class="col-4">
+                <app-bordered-field [label]="'Curso'"></app-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-bordered-field [label]="'Valor'"></app-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-bordered-field [label]="'Data de início'"></app-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-bordered-field [label]="'Vencimento'"></app-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-radio-button-group [label]="'Plano concluído?'"></app-radio-button-group>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <span class="tertiary-button text-preset-350">Cancelar</span>
+            <app-primary-button [label]="'Salvar'"></app-primary-button>
+        </div>
+    </div>
+</app-default-page>

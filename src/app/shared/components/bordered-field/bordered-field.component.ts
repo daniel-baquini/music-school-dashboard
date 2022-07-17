@@ -6,7 +6,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./bordered-field.component.css']
 })
 export class BorderedFieldComponent {
-    
     @Input() label: string = "";
-    
 }

@@ -6,6 +6,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { NgModule } from '@angular/core';
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
+import { RadioButtonGroupComponent } from './components/radio-button-group/radio-button-group.component';
 import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
@@ -18,8 +19,9 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         LogoComponent,
         PhotoUploadComponent,
         PrimaryButtonComponent,
+        RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent,
+        TopMenuComponent
     ],
     exports: [
         BorderedFieldComponent,
@@ -29,6 +31,7 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         LogoComponent,
         PhotoUploadComponent,
         PrimaryButtonComponent,
+        RadioButtonGroupComponent,
         SideMenuComponent,
         TopMenuComponent
     ],
