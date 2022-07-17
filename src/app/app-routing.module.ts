@@ -7,6 +7,10 @@ const routes: Routes = [
         path: "authentication"
     },
     {
+        loadChildren: () => import("./billboard/billboard.module").then(m => m.BillboardModule),
+        path: "billboard"
+    },
+    {
         loadChildren: () => import("./students/students.module").then(m => m.StudentsModule),
         path: "students"
     }
