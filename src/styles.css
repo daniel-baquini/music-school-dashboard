@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("./reset.css");
+
+:root {
+    --c-dark-10: rgba(0, 0, 0, 0.1);
+    --c-dark-60: rgba(0, 0, 0, 0.6);
+    --c-dark-100: #000000;
+    --c-primary-60: #4158B6;
+    --c-primary-70: #2D4294;
+    --c-primary-80: #1D2E72;
+    --c-primary-90: #111D50;
+    --c-white-10: #FFFFFF;
+    --c-white-20: #F4F4F4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: var(--c-white-20);
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+}
+
+app-root {
+    display: contents;
+}
+
+.global-shadow {
+    box-shadow: 0px 7px 29px rgba(100, 100, 111, 0.2);
+}
+
+.text-preset-290 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.text-preset-340 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.text-preset-360 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.text-preset-400 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.text-preset-450 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+}

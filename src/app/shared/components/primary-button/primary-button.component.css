@@ -1,0 +1,23 @@
+:host {
+    display: block;
+}
+
+button {
+    background-color: var(--c-primary-60);
+    border: none;
+    border-radius: 8px;
+    color: var(--c-white-10);
+    cursor: pointer;
+    outline: none;
+    padding: 16px 24px;
+    transition: 150ms;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--c-primary-70);
+}
+
+button:active {
+    background-color: var(--c-primary-90);
+}

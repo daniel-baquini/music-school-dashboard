@@ -1,0 +1,43 @@
+:host {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    overflow: scroll;
+    width: 100%;
+}
+
+.content {
+    background-color: var(--c-white-10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 144px 36px;
+    width: 448px;
+}
+
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 100%;
+}
+
+.form-buttons {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 320px;
+    width: 100%;
+}
+
+.form-buttons > app-primary-button {
+    width: 100%;
+}
+
+.form-buttons__forgot-password {
+    color: var(--c-primary-60);
+}

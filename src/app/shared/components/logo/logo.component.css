@@ -1,0 +1,7 @@
+.icon-logo {
+    color: var(--c-dark-100);
+}
+
+.icon-logo.large {
+    font-size: 160px;
+}
