@@ -4,6 +4,7 @@
 
 :root {
     --c-dark-10: rgba(0, 0, 0, 0.1);
+    --c-dark-40: rgba(0, 0, 0, 0.4);
     --c-dark-60: rgba(0, 0, 0, 0.6);
     --c-dark-100: #000000;
     --c-primary-60: #4158B6;
@@ -50,6 +51,12 @@ app-root {
     line-height: 16px;
 }
 
+.text-preset-350 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;    
+}
+
 .text-preset-360 {
     font-size: 14px;
     font-weight: 400;
@@ -65,5 +72,11 @@ app-root {
 .text-preset-450 {
     font-size: 16px;
     font-weight: 500;
+    line-height: 100%;
+}
+
+.text-preset-800 {
+    font-size: 32px;
+    font-weight: 400;
     line-height: 100%;
 }

@@ -1,0 +1,47 @@
+:host {
+    display: contents;
+}
+
+.content-window {
+    align-items: center;
+    background-color: var(--c-white-10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 32px;
+    width: 100%;
+}
+
+.table-options {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.table-options > app-bordered-field {
+    margin-left: auto;
+    max-width: 376px;
+    width: 100%;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+}
+
+table > tbody > tr {
+    border-top: 1px solid var(--c-dark-10);
+}
+
+table > * > * > th {
+    color: var(--c-dark-80);
+    padding: 12px;
+}
+
+table > * > * > td {
+    color: var(--c-dark-60);
+    padding: 24px 12px;
+}

@@ -1,0 +1,12 @@
+<span class="page-title text-preset-800">{{this.pageTitle}}</span>
+<div class="subpages">
+    <div
+        class="subpages__link"
+        *ngFor="let link of this.links"
+        [routerLink]="link.link"
+        [routerLinkActive]="'subpages__link--active'"
+    >
+        <span class="link__label text-preset-390">{{link.label}}</span>
+        <div class="link__indicator"></div>
+    </div>
+</div>
