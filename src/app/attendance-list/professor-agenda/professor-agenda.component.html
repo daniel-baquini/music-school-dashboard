@@ -1,0 +1,18 @@
+<div class="times">
+    <span
+        class="text-preset-290"
+        *ngFor="let step of this.getRangeInSteps(0, 23.5, 0.5)"
+        [ngStyle]="{ 'top': (30 + (step*120)) + 'px' }"
+        style="top: 30px"
+    >{{this.numberToStrHour(step)}}</span>
+</div>
+<div class="classes">
+    <div class="classes__markers">
+        <div
+            *ngFor="let step of this.getRangeInSteps(0, 23.5, 0.25)"
+            [ngStyle]="{ 'top': (30 + (step*120)) + 'px' }"
+            style="top: 30px"        
+        ></div>
+    </div>
+    <app-class-post-it></app-class-post-it>
+</div>

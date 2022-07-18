@@ -1,0 +1,46 @@
+:host {
+    align-items: center;
+    background-color: var(--c-white-10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    overflow: hidden;
+    position: absolute;
+    width: 256px;
+    z-index: 1;
+}
+
+.status {
+    background-color: red;
+    height: 100%;
+    width: 12px;
+}
+
+.class-data {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 8px 12px;
+}
+
+.class-data__student-photo-wrapper {
+    background-color: rebeccapurple;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.class-data_student-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-data__name {
+    color: var(--c-dark-60);
+}
+
+.student-data__class {
+    color: var(--c-dark-40);
+}
