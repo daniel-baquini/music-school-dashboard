@@ -1,6 +1,6 @@
 import { CourseDetailPageComponent } from './course-detail-page/course-detail-page.component';
 import { CoursesPageComponent } from './courses-page/courses-page.component';
-import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeDetailComponent } from './employee-detail-page/employee-detail-page.component';
 import { EmployeesPageComponent } from './employees-page/employees-page.component';
 import { EmployeeWorkingTimeComponent } from './employee-working-time/employee-working-time.component';
 import { NgModule } from '@angular/core';
