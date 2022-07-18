@@ -1,0 +1,34 @@
+<app-default-detail-page
+    [links]="this.links"
+    [pageTitle]="'Avisos'"
+>
+    <div class="grid">
+        <div class="col-8">
+            <app-divider [label]="'Dados do conteúdo'"></app-divider>
+        </div>
+        <div class="col-4">
+            <app-bordered-field [label]="'Título'"></app-bordered-field>
+        </div>
+        <div class="col-8">
+            <app-bordered-field [label]="'Descrição'"></app-bordered-field>
+        </div>
+        <div class="col-4">
+            <app-bordered-field [label]="'Curso'"></app-bordered-field>
+        </div>
+        <div class="col-4">
+            <app-bordered-field [label]="'Tipo de conteúdo'"></app-bordered-field>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-8">
+            <app-divider [label]="'Conteúdo'"></app-divider>
+        </div>
+        <div class="col-8">
+            <app-file-upload></app-file-upload>
+        </div>
+        <div class="col-8">
+            <app-bordered-field [label]="'Link do vídeo'"></app-bordered-field>
+        </div>
+    </div>
+
+</app-default-detail-page>

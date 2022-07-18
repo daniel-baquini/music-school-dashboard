@@ -5,6 +5,7 @@ import { DefaultDataPageComponent } from './components/default-data-page/default
 import { DefaultDetailPageComponent } from './components/default-detail-page/default-detail-page.component';
 import { DefaultPageComponent } from './components/default-page/default-page.component';
 import { DividerComponent } from './components/divider/divider.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NgModule } from '@angular/core';
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
@@ -22,12 +23,13 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         DefaultDetailPageComponent,
         DefaultPageComponent,
         DividerComponent,
+        FileUploadComponent,
         LogoComponent,
         PhotoUploadComponent,
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent    
+        TopMenuComponent
     ],
     exports: [
         BorderedFieldComponent,
@@ -37,6 +39,7 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         DefaultDetailPageComponent,
         DefaultPageComponent,
         DividerComponent,
+        FileUploadComponent,
         LogoComponent,
         PhotoUploadComponent,
         PrimaryButtonComponent,

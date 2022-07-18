@@ -1,0 +1,28 @@
+:host {
+    align-items: center;
+    border: 1px dashed var(--c-dark-20);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.photo-preview {
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 80px;
+    overflow: hidden;
+    width: 80px;
+}
+
+.photo-preview__placeholder {
+    background-color: var(--c-blue-30);
+    height: 100%;
+    width: 100%;
+}
+
+.upload-instructions {
+    color: var(--c-dark-60);
+}
