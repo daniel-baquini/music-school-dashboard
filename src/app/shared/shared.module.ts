@@ -1,4 +1,5 @@
 import { BorderedFieldComponent } from './components/bordered-field/bordered-field.component';
+import { ChipComponent } from './components/chip/chip.component';
 import { CommonModule } from '@angular/common';
 import { DefaultDataPageComponent } from './components/default-data-page/default-data-page.component';
 import { DefaultDetailPageComponent } from './components/default-detail-page/default-detail-page.component';
@@ -16,6 +17,7 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
 @NgModule({
     declarations: [
         BorderedFieldComponent,
+        ChipComponent,
         DefaultDataPageComponent,
         DefaultDetailPageComponent,
         DefaultPageComponent,
@@ -25,10 +27,11 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent        
+        TopMenuComponent    
     ],
     exports: [
         BorderedFieldComponent,
+        ChipComponent,
         CommonModule,
         DefaultDataPageComponent,
         DefaultDetailPageComponent,

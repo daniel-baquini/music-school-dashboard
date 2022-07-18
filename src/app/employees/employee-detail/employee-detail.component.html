@@ -1,0 +1,46 @@
+<app-default-detail-page
+    [links]="this.links"
+    [pageTitle]="'Colaboradores'"
+>
+    <div class="grid">
+        <div class="col-8">
+            <app-divider [label]="'Dados pessoais'"></app-divider>
+        </div>
+        <div class="col-8">
+            <app-photo-upload></app-photo-upload>
+        </div>
+        <div class="col-3">
+            <app-bordered-field [label]="'Nome'"></app-bordered-field>
+        </div>
+        <div class="col-5">
+            <app-bordered-field [label]="'Sobrenome'"></app-bordered-field>
+        </div>
+        <div class="col-4">
+            <app-bordered-field [label]="'Email'"></app-bordered-field>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-8">
+            <app-divider [label]="'Cursos (Necessário escolher ao menos um)'"></app-divider>
+        </div>
+        <div class="col-8 courses-chips">
+            <app-chip [label]="'Guitarra'"></app-chip>
+            <app-chip [label]="'Bateria'"></app-chip>
+            <app-chip [label]="'Saxofone'"></app-chip>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-8">
+            <app-divider [label]="'Calendário'"></app-divider>
+        </div>
+        <div class="working-time">
+            <app-employee-working-time [weekDay]="'Domingo'"></app-employee-working-time>
+            <app-employee-working-time [weekDay]="'Segunda-feira'"></app-employee-working-time>
+            <app-employee-working-time [weekDay]="'Terça-feira'"></app-employee-working-time>
+            <app-employee-working-time [weekDay]="'Quarta-feira'"></app-employee-working-time>
+            <app-employee-working-time [weekDay]="'Quinta-feira'"></app-employee-working-time>
+            <app-employee-working-time [weekDay]="'Sexta-feira'"></app-employee-working-time>
+            <app-employee-working-time [weekDay]="'Sábado'"></app-employee-working-time>
+        </div>
+    </div>
+</app-default-detail-page>

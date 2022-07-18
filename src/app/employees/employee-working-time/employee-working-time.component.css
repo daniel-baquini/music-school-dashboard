@@ -1,0 +1,13 @@
+:host {
+    background-color: var(--c-white-20);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 12px;
+}
+
+:host.active {
+    background-color: var(--c-white-10);
+    border: 1px solid var(--c-primary-60)
+}

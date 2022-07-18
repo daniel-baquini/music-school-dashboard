@@ -1,0 +1,22 @@
+:host {
+    align-items: center;
+    border: 1px solid var(--c-dark-40);
+    border-radius: 50vh;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px 12px;
+    width: fit-content;
+}
+
+:host.active {
+    border-color: var(--c-primary-60);
+}
+
+.label {
+    color: var(--c-dark-60);
+}
+
+:host.active > .label {
+    color: var(--c-primary-60);
+}

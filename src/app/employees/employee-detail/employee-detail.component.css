@@ -1,0 +1,17 @@
+:host {
+    display: contents;
+}
+
+.courses-chips {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.working-time {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}

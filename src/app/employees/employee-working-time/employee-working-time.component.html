@@ -1,0 +1,5 @@
+<span class="text-preset-390 week-day">{{this.weekDay}}</span>
+<span
+    (blur)="this.onHoursBlur($event)"
+    class="text-preset-390" [contentEditable]="true"
+>{{this._hours}}</span>
