@@ -1,10 +1,12 @@
+import { CourseDetailPageComponent } from './course-detail-page/course-detail-page.component';
+import { CoursesPageComponent } from './courses-page/courses-page.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeesPageComponent } from './employees-page/employees-page.component';
+import { EmployeeWorkingTimeComponent } from './employee-working-time/employee-working-time.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import TopMenuLink from '../shared/components/top-menu/top-menu-link.model';
-import { EmployeeWorkingTimeComponent } from './employee-working-time/employee-working-time.component';
 
 const employeesRoutes: Routes = [
     {
@@ -19,6 +21,14 @@ const employeesRoutes: Routes = [
     {
         component: EmployeeDetailComponent,
         path: "employees/detail/:id"
+    },
+    {
+        component: CoursesPageComponent,
+        path: "courses"
+    },
+    {
+        component: CourseDetailPageComponent,
+        path: "courses/detail/:id"
     }
 ];
 
@@ -35,6 +45,8 @@ export const employeesTopLinks: TopMenuLink[] = [
 
 @NgModule({
     declarations: [
+        CourseDetailPageComponent,
+        CoursesPageComponent,
         EmployeeDetailComponent,
         EmployeesPageComponent,
         EmployeeWorkingTimeComponent

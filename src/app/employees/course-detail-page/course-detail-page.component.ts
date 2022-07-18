@@ -3,10 +3,10 @@ import { employeesTopLinks } from '../employees.module';
 import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model';
 
 @Component({
-    selector: 'app-employees-page',
-    templateUrl: './employees-page.component.html',
-    styleUrls: ['./employees-page.component.css']
+    selector: 'app-course-detail-page',
+    templateUrl: './course-detail-page.component.html',
+    styleUrls: ['./course-detail-page.component.css']
 })
-export class EmployeesPageComponent {
+export class CourseDetailPageComponent {
     @Input() links: TopMenuLink[] = employeesTopLinks;
 }
