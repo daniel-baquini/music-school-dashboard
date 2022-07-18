@@ -1,13 +1,14 @@
+import { AllAttendanceListsComponent } from './all-attendance-lists/all-attendance-lists.component';
 import { AttendanceListDetailPageComponent } from './attendance-list-detail-page/attendance-list-detail-page.component';
 import { AttendanceListsPageComponent } from './attendance-lists-page/attendance-lists-page.component';
+import { ClassPostItComponent } from './class-post-it/class-post-it.component';
 import { NgModule } from '@angular/core';
+import { ProfessorAgendaComponent } from './professor-agenda/professor-agenda.component';
+import { RescheduleClassDetailPageComponent } from './reschedule-class-detail-page/reschedule-class-detail-page.component';
 import { RescheduleClassesPageComponent } from './reschedule-classes-page/reschedule-classes-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import TopMenuLink from '../shared/components/top-menu/top-menu-link.model';
-import { RescheduleClassDetailPageComponent } from './reschedule-class-detail-page/reschedule-class-detail-page.component';
-import { ProfessorAgendaComponent } from './professor-agenda/professor-agenda.component';
-import { ClassPostItComponent } from './class-post-it/class-post-it.component';
 
 const attendanceListRoutes: Routes = [
     {
@@ -30,6 +31,10 @@ const attendanceListRoutes: Routes = [
     {
         component: RescheduleClassDetailPageComponent,
         path: "reschedule-classes/detail/:id"
+    },
+    {
+        component: AllAttendanceListsComponent,
+        path: "all-attendance-lists"
     }
 ];
 
@@ -43,19 +48,20 @@ export const attendanceListTopLinks: TopMenuLink[] = [
         link: "/attendance-list/reschedule-classes"
     },
     {
-        label: "Todas as listas de presença",
+        label: "Visualizar listas de presenças",
         link: "/attendance-list/all-attendance-lists"
     }
 ];
 
 @NgModule({
     declarations: [
+        AllAttendanceListsComponent,
         AttendanceListsPageComponent,
         AttendanceListDetailPageComponent,
-        RescheduleClassesPageComponent,
-        RescheduleClassDetailPageComponent,
+        ClassPostItComponent,
         ProfessorAgendaComponent,
-        ClassPostItComponent
+        RescheduleClassDetailPageComponent,
+        RescheduleClassesPageComponent
     ],
     imports: [
         RouterModule.forChild(attendanceListRoutes),
