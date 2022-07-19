@@ -1,0 +1,10 @@
+<div class="cropper">
+    <div class="photo-preview">
+        <canvas height="432" #imageCanvas width="432"></canvas>
+    </div>
+    <input #zoomRange type="range">
+    <div class="buttons-row">
+        <span class="cancel-button text-preset-350" (click)="this.discardImage()">Cancelar</span>
+        <app-primary-button (click)="this.saveImage()" [label]="'Salvar'"></app-primary-button>
+    </div>
+</div>

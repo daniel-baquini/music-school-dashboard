@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import Enrollment from 'src/app/shared/firebase/enrollments/enrollment.model';
+import { EnrollmentService } from 'src/app/shared/firebase/enrollments/enrollment.service';
 import { studentsTopLinks } from '../students.module';
 import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model';
 
@@ -8,5 +10,15 @@ import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model'
     styleUrls: ['./enrollments-page.component.css']
 })
 export class EnrollmentsPageComponent {
+
+    data: Enrollment[] = [];
+    dataLoaded: boolean = false;
     links: TopMenuLink[] = studentsTopLinks;
+
+    constructor(enrollmentService: EnrollmentService) {
+        enrollmentService.readAll().subscribe(x => {
+            this.dataLoaded = true;
+            this.data = x;
+        })
+    }
 }

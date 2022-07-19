@@ -1,42 +1,89 @@
 <app-default-detail-page
+    [beforeCreateCallback]="this.uploadUserPhoto.bind(this)"
+    [createCallback]="this.enrollmentService.create.bind(this.enrollmentService)"
+    [form]="this.form"
     [links]="this.links"
+    [loadDataCallback]="this.enrollmentService.read.bind(this.enrollmentService)"
     [pageTitle]="'Alunos'"
+    [returnLink]="'/students/enrollments'"
 >
-    <div class="grid">
+    <div class="grid" [formGroup]="this.form">
         <div class="col-8">
             <app-divider [label]="'Dados pessoais'"></app-divider>
         </div>
         <div class="col-8">
-            <app-photo-upload></app-photo-upload>
+            <app-photo-upload
+                [imageUrl]="this.form.controls['photoUrl'].value"
+                (callImageCropper)="this.callImageCropper($event)"
+                (deleteImage)="this.discardImage()"
+            ></app-photo-upload>
         </div>
         <div class="col-3">
-            <app-bordered-field [label]="'Nome'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['name']"
+                [label]="'Nome'"
+                formControlName="name"
+            ></app-bordered-field>
         </div>
         <div class="col-5">
-            <app-bordered-field [label]="'Sobrenome'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['surname']"
+                [label]="'Sobrenome'"
+                formControlName="surname"
+            ></app-bordered-field>
         </div>
         <div class="col-4">
-            <app-bordered-field [label]="'Email'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['email']"
+                [label]="'Email'"
+                formControlName="email"
+            ></app-bordered-field>
         </div>
         <div class="col-4">
-            <app-bordered-field [label]="'Telefone'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['telephone']"
+                [label]="'Telefone'"
+                formControlName="telephone"
+            ></app-bordered-field>
         </div>
         <div class="col-4">
-            <app-bordered-field [label]="'Data de nascimento'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['birthDate']"
+                [label]="'Data de nascimento'"
+                formControlName="birthDate"
+            ></app-bordered-field>
         </div>
     </div>
-    <div class="grid">
+    <div class="grid" [formGroup]="this.form">
         <div class="col-8">
             <app-divider [label]="'Dados do responsável (Obrigatório caso seja de menor)'"></app-divider>
         </div>
         <div class="col-3">
-            <app-bordered-field [label]="'Nome'"></app-bordered-field>
+            <app-bordered-field
+                [abstractControl]="this.form.controls['responsibleName']"
+                [label]="'Nome'"
+                formControlName="responsibleName"
+            ></app-bordered-field>
         </div>
         <div class="col-5">
-            <app-bordered-field [label]="'Sobrenome'"></app-bordered-field>
+            <app-bordered-field
+                [abstractControl]="this.form.controls['responsibleSurname']"
+                [label]="'Sobrenome'"
+                formControlName="responsibleSurname"
+            ></app-bordered-field>
         </div>
         <div class="col-4">
-            <app-bordered-field [label]="'Telefone'"></app-bordered-field>
+            <app-bordered-field
+                [abstractControl]="this.form.controls['responsibleTelephone']"
+                [label]="'Telefone'"
+                formControlName="responsibleTelephone"
+            ></app-bordered-field>
         </div>  
     </div>
 </app-default-detail-page>
+<app-photo-cropper
+    (discardImageEvent)="this.discardImage()"
+    [imagePath]="this.form.controls['photoUrl'].value"
+    *ngIf="this.showImageCropper"
+    (saveImageEvent)="this.saveImage($event)"
+></app-photo-cropper>

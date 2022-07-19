@@ -1,0 +1,47 @@
+:host {
+    align-items: center;
+    background: var(--c-dark-60);
+    display: flex;
+    height: 100%;
+    left: 0px;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cropper {
+    align-items: center;
+    background-color: var(--c-white-10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+    width: 496px;
+}
+
+.photo-preview {
+    background-color: rebeccapurple;
+    border-radius: 8px;
+    height: 432px;
+    width: 432px;
+}
+
+canvas {
+    height: 100%;
+    width: 100%;
+}
+
+input[type='range'] {
+    width: 320px;
+}
+
+.buttons-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: end;
+    width: 100%;
+}

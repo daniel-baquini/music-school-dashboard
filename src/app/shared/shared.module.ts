@@ -6,8 +6,11 @@ import { DefaultDetailPageComponent } from './components/default-detail-page/def
 import { DefaultPageComponent } from './components/default-page/default-page.component';
 import { DividerComponent } from './components/divider/divider.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoadingModalComponent } from './components/loading-modal/loading-modal.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NgModule } from '@angular/core';
+import { PhotoCropperComponent } from './components/photo-cropper/photo-cropper.component';
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
 import { RadioButtonGroupComponent } from './components/radio-button-group/radio-button-group.component';
@@ -24,12 +27,14 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         DefaultPageComponent,
         DividerComponent,
         FileUploadComponent,
+        LoadingModalComponent,
         LogoComponent,
+        PhotoCropperComponent,
         PhotoUploadComponent,
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent
+        TopMenuComponent,
     ],
     exports: [
         BorderedFieldComponent,
@@ -40,7 +45,9 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         DefaultPageComponent,
         DividerComponent,
         FileUploadComponent,
+        LoadingModalComponent,
         LogoComponent,
+        PhotoCropperComponent,
         PhotoUploadComponent,
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
@@ -49,6 +56,8 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
     ],
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         RouterModule
     ]
 })

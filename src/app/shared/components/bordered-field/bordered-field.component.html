@@ -5,7 +5,14 @@
         <div class="label-wrapper__right-border"></div>
     </div>
     <div class="field-group__input-wrapper">
-        <input class="text-preset-400" type="text">
+        <input
+            class="text-preset-400"            
+            (blur)="this.onBaseTouchedFn()"
+            (input)="this.formFieldOnChange($event)"
+            [(ngModel)]="this.value"
+            [readonly]="this.readOnly"
+            [type]="this.type"
+        >
     </div>
 </div>
-<span class="error-message text-preset-360">Mensagem de erro</span>
+<span class="error-message text-preset-360">{{this.error}}</span>

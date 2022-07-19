@@ -1,10 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("./reset.css");
+@import url("./icon.css");
+
+@font-face {
+    font-family: "Roboto";
+    font-weight: 400;
+    src: url("./assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-weight: 500;
+    src: url("./assets/fonts/Roboto/Roboto-Medium.ttf");
+}
 
 :root {
+    --c-blue-20: #EBF2FF;
     --c-blue-30: #BDD5FF;
     --c-blue-60: #357FFF;
+    --c-blue-80: #1351BB;
     --c-dark-10: rgba(0, 0, 0, 0.1);
     --c-dark-20: rgba(0, 0, 0, 0.2);
     --c-dark-40: rgba(0, 0, 0, 0.4);
@@ -31,6 +46,7 @@ html {
 
 body {
     background-color: var(--c-white-20);
+    font-family: "Roboto";
     height: 100%;
     min-height: 100%;
     width: 100%;

@@ -1,10 +1,22 @@
 <div class="photo-preview">
-    <div class="photo-preview__placeholder"></div>
+    <img alt="Preview da foto enviada" *ngIf="this.imageUrl !== ''" [src]="this.imageUrl">
+    <div class="photo-preview__placeholder" *ngIf="this.imageUrl === ''">
+        <span class="icon-user placeholder__icon"></span>
+    </div>
 </div>
+<input
+    (change)="this.updatePreview()"
+    #inputField style="display: none;"
+    type="file"
+>
 <div class="instructions">
     <div class="instructions__upload-instructions">
         <span class="text-preset-400 upload-instructions__drag-or-click-to-upload">Clique para escolher uma foto para o colaborador, ou arraste-a aqui</span>
         <span class="text-preset-290 upload-instructions__allowed-files">Somente arquivos JPEG, JPG e PNG</span>
     </div>
-    <span class="instructions__delete-instructions text-preset-290">Excluir foto</span>
+    <span
+        class="instructions__delete-instructions text-preset-290"
+        (click)="this.onDeletePhotoClick($event)"
+        *ngIf="this.imageUrl !== ''"
+    >Excluir foto</span>
 </div>

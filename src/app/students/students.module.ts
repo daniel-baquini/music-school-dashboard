@@ -1,5 +1,6 @@
 import { EnrollmentDetailPageComponent } from './enrollment-detail-page/enrollment-detail-page.component';
 import { EnrollmentsPageComponent } from './enrollments-page/enrollments-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { PlanDetailPageComponent } from './plan-detail-page/plan-detail-page.component';
 import { PlansPageComponent } from './plans-page/plans-page.component';
@@ -50,6 +51,8 @@ export const studentsTopLinks: TopMenuLink[] = [
         PlanDetailPageComponent
     ],
     imports: [
+        FormsModule,
+        ReactiveFormsModule,
         RouterModule.forChild(studentsRoutes),
         SharedModule
     ]

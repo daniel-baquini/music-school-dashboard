@@ -11,17 +11,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let enrollment of this.data">
                 <td></td>
-                <td>Andriy Belo Pegado</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Diogo Bairros Amorim</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Levi Lage Belchior</td>
+                <td
+                    class="link-cell"
+                    [routerLink]="'/students/enrollments/detail/' + enrollment.id"
+                >{{enrollment.name + " " + enrollment.surname}}</td>
             </tr>
         </tbody>
     </table>
