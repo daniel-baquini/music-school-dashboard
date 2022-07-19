@@ -9,10 +9,19 @@
             class="text-preset-400"            
             (blur)="this.onBaseTouchedFn()"
             (input)="this.formFieldOnChange($event)"
+            *ngIf="this.fieldConfig.type === 'input'"
             [(ngModel)]="this.value"
             [readonly]="this.readOnly"
             [type]="this.type"
         >
+        <textarea
+            class="text-preset-400"            
+            (blur)="this.onBaseTouchedFn()"
+            (input)="this.textareaOnChange($event)"
+            *ngIf="this.fieldConfig.type === 'textarea'"
+            [(ngModel)]="this.value"
+            [readonly]="this.readOnly"
+        ></textarea>
     </div>
 </div>
 <span class="error-message text-preset-360">{{this.error}}</span>

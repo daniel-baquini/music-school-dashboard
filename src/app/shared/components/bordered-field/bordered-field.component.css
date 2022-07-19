@@ -49,11 +49,16 @@
     width: 100%;
 }
 
-input {
+input, textarea {
     border: none;
     color: var(--c-dark-80);
     outline: none;
     width: 100%;
+}
+
+textarea {
+    font-family: inherit;
+    resize: none;
 }
 
 .error-message {

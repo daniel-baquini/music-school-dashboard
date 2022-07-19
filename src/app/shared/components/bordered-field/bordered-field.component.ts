@@ -1,5 +1,5 @@
 import { BaseFormField } from '../../utils/base-form-field.component';
-import { Component, forwardRef } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -13,6 +13,21 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
             multi: true
         }   
     ] 
-
 })
-export class BorderedFieldComponent extends BaseFormField { }
+export class BorderedFieldComponent extends BaseFormField {
+    @Input() fieldConfig: { type: "input" } |
+    {
+        data: { label: string, value: any }[],
+        type: "select"
+    } |
+    { type: "textarea" } = { type: "input" }
+
+    textareaOnChange(event: Event): void {    
+        const textArea = event.target as HTMLTextAreaElement;
+        textArea.style.height = "auto";
+        textArea.style.height = `${textArea.scrollHeight}px`;
+
+        this.formFieldOnChange(event);
+    }
+
+}
