@@ -1,10 +1,18 @@
 <app-default-detail-page
+    [createCallback]="this.courseService.create.bind(this.courseService)"
+    [form]="this.form"
     [links]="this.links"
+    [loadDataCallback]="this.courseService.read.bind(this.courseService)"
     [pageTitle]="'Colaboradores'"
+    [returnLink]="'/employees/courses'"
 >
-    <div class="grid">
+    <div class="grid" [formGroup]="this.form">
         <div class="col-8">
-            <app-bordered-field [label]="'Nome do curso'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['name']"
+                [label]="'Nome do curso'"
+                formControlName="name"
+            ></app-bordered-field>
         </div>
     </div>
 </app-default-detail-page>
