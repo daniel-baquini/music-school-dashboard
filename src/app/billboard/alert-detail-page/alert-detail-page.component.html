@@ -1,13 +1,25 @@
 <app-default-detail-page
+    [createCallback]="this.alertService.create.bind(this.alertService)"
+    [form]="this.form"
     [links]="this.links"
+    [loadDataCallback]="this.alertService.read.bind(this.alertService)"
     [pageTitle]="'Avisos'"
+    [returnLink]="'/billboard/alerts'"
 >
-    <div class="grid">
+    <div class="grid" [formGroup]="this.form">
         <div class="col-4">
-            <app-bordered-field [label]="'Título'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['title']"
+                [label]="'Título'"
+                formControlName="title"
+            ></app-bordered-field>
         </div>
         <div class="col-8">
-            <app-bordered-field [label]="'Conteúdo'"></app-bordered-field>
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['content']"
+                [label]="'Conteúdo'"
+                formControlName="content"
+            ></app-bordered-field>
         </div>
     </div>
 </app-default-detail-page>

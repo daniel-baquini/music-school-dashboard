@@ -13,19 +13,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let alert of this.data">
                 <td></td>
-                <td>Andriy Belo Pegado</td>
-                <td>No dia 16/07/2022 estaremos fechados para reformas, agradecemos a compreensão.</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Diogo Bairros Amorim</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Levi Lage Belchior</td>
+                <td
+                    class="link-cell"
+                    [routerLink]="'/billboard/alerts/detail/' + alert.id"
+                >{{alert.title}}</td>
+                <td>{{alert.content}}</td>
+                <td>{{alert.date.toMillis() | date: "yyyy/MM/dd" }}</td>
             </tr>
         </tbody>
     </table>
