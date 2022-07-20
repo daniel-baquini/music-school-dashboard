@@ -34,7 +34,7 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent,
+        TopMenuComponent
     ],
     exports: [
         BorderedFieldComponent,

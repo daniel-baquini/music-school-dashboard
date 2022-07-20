@@ -12,9 +12,10 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
             useExisting: forwardRef(() => BorderedFieldComponent),
             multi: true
         }   
-    ] 
+    ]
 })
 export class BorderedFieldComponent extends BaseFormField {
+
     @Input() fieldConfig: { type: "input" } |
     {
         data: { label: string, value: any }[],

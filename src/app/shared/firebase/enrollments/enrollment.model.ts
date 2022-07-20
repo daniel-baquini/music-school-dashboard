@@ -1,5 +1,5 @@
 interface Enrollment {
-    birthDate: string;
+    birthDate: Date;
     email: string;
     id?: string;
     name: string;

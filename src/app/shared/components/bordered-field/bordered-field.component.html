@@ -7,16 +7,25 @@
     <div class="field-group__input-wrapper">
         <input
             class="text-preset-400"            
-            (blur)="this.onBaseTouchedFn()"
+            (focus)="this.onBaseTouchedFn()"
             (input)="this.formFieldOnChange($event)"
             *ngIf="this.fieldConfig.type === 'input'"
             [(ngModel)]="this.value"
             [readonly]="this.readOnly"
             [type]="this.type"
         >
+        <select
+            class="text-preset-400"            
+            (focus)="this.onBaseTouchedFn()"
+            (change)="this.formFieldOnChange($event)"
+            *ngIf="this.fieldConfig.type === 'select'"
+            [(ngModel)]="this.value"
+        >
+            <option *ngFor="let option of this.fieldConfig.data" [value]="option.value">{{option.label}}</option>
+        </select>
         <textarea
             class="text-preset-400"            
-            (blur)="this.onBaseTouchedFn()"
+            (focus)="this.onBaseTouchedFn()"
             (input)="this.textareaOnChange($event)"
             *ngIf="this.fieldConfig.type === 'textarea'"
             [(ngModel)]="this.value"

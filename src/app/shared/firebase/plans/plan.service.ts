@@ -1,32 +1,31 @@
-import Alert from './alert.model';
 import { DefaultFirestoreService } from '../default-firestore.service';
-import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { Injectable } from '@angular/core';
+import Plan from './plan.model';
+import { Timestamp } from 'firebase/firestore';
 
 @Injectable({
     providedIn: 'root'
 })
-export class AlertService {
+export class PlanService {
     
-    public readonly PATH_TO_COLLECTION: string = "alerts";
+    public readonly PATH_TO_COLLECTION: string = "plans";
 
     constructor(private defaultFirestore: DefaultFirestoreService) { }
 
-    async create(data: Alert) {
-        const now = new Date();
-        data.date = (now.getFullYear() + "/" + now.getMonth() + "/" + now.getDay()) as unknown as Date;
+    async create(data: Plan) {
         this.defaultFirestore.create(this.PATH_TO_COLLECTION, data);
     }
 
-    async read(id: string): Promise<Alert | undefined> {
+    async read(id: string): Promise<Plan | undefined> {
         return firstValueFrom(this.defaultFirestore.read(`${this.PATH_TO_COLLECTION}/${id}`));
     }
 
     readAll() {
-        return this.defaultFirestore.readAll<Alert>(this.PATH_TO_COLLECTION);
+        return this.defaultFirestore.readAll<Plan>(this.PATH_TO_COLLECTION);
     }
 
-    update(data: Alert) {
+    update(data: Plan) {
         return this.defaultFirestore.update(this.PATH_TO_COLLECTION, data);
     }
 

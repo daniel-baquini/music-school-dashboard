@@ -1,8 +1,6 @@
-import { Timestamp } from "firebase/firestore";
-
 interface Alert {
     content: string;
-    date: Timestamp;
+    date: Date;
     id?: string;
     title: string
 }

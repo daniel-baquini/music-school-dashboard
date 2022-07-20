@@ -6,6 +6,7 @@
     [loadDataCallback]="this.enrollmentService.read.bind(this.enrollmentService)"
     [pageTitle]="'Alunos'"
     [returnLink]="'/students/enrollments'"
+    [updateCallback]="this.enrollmentService.update.bind(this.enrollmentService)"
 >
     <div class="grid" [formGroup]="this.form">
         <div class="col-8">
@@ -51,6 +52,7 @@
                 [abstractControl]="this.form.controls['birthDate']"
                 [label]="'Data de nascimento'"
                 formControlName="birthDate"
+                [type]="'date'"
             ></app-bordered-field>
         </div>
     </div>

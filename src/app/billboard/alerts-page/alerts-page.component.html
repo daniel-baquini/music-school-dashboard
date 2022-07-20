@@ -20,7 +20,7 @@
                     [routerLink]="'/billboard/alerts/detail/' + alert.id"
                 >{{alert.title}}</td>
                 <td>{{alert.content}}</td>
-                <td>{{alert.date.toMillis() | date: "yyyy/MM/dd" }}</td>
+                <td>{{alert.date | date: "yyyy/MM/dd" }}</td>
             </tr>
         </tbody>
     </table>

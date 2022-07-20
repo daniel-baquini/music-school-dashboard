@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { studentsTopLinks } from '../students.module';
 import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model';
+import Plan from 'src/app/shared/firebase/plans/plan.model';
+import { PlanService } from 'src/app/shared/firebase/plans/plan.service';
 
 @Component({
     selector: 'app-plans-page',
@@ -8,5 +10,15 @@ import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model'
     styleUrls: ['./plans-page.component.css']
 })
 export class PlansPageComponent {
+    
+    data: Plan[] = [];
+    dataLoaded: boolean = false;
     links: TopMenuLink[] = studentsTopLinks;
+
+    constructor(planService: PlanService) {
+        planService.readAll().subscribe(x => {
+            this.dataLoaded = true;
+            this.data = x;
+        })
+    }
 }

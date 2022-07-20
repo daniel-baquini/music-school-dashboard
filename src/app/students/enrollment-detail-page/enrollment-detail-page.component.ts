@@ -25,6 +25,7 @@ export class EnrollmentDetailPageComponent {
         this.form = formBuilder.group({
             "birthDate": new FormControl("", [validator.birthDate]),
             "email": new FormControl("", [validator.email]),
+            "id": new FormControl(""),
             "name": new FormControl("", [validator.name]),
             "photoUrl": new FormControl(""),
             "responsibleName": new FormControl("", [(control: AbstractControl) => {
@@ -42,6 +43,7 @@ export class EnrollmentDetailPageComponent {
     }
 
     callImageCropper(imageUrl: string): void {
+        console.log("alo pensamento")
         this.form.controls["photoUrl"].setValue(imageUrl);
         this.showImageCropper = true;
     }

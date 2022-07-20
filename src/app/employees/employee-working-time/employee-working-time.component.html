@@ -1,5 +1,18 @@
-<span class="text-preset-390 week-day">{{this.weekDay}}</span>
-<span
-    (blur)="this.onHoursBlur($event)"
-    class="text-preset-390" [contentEditable]="true"
->{{this._hours}}</span>
+<ng-container formArrayName="workingTime" *ngIf="this.formArray">
+    <div
+        class="working-hour"
+        *ngFor="let workingTime of this.formArray.controls; let i = index" [formGroupName]="i"
+    >
+        <span class="text-preset-390 week-day">{{this.getWeekDayFromControl(workingTime)}}</span>
+        <div class="field-group">
+            <input
+                class="text-preset-390"
+                (focus)="this.markControlAsTouched(workingTime, 'hoursStr')"
+                formControlName="hoursStr"
+                placeholder="N/A"
+                type="text"
+            >
+            <span class="error-message text-preset-360">{{this.getErrorFromControl(workingTime, 'hoursStr')}}</span>
+        </div>
+    </div>
+</ng-container>

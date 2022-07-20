@@ -1,14 +1,6 @@
 import { Injectable } from "@angular/core";
-import { AbstractControl, FormControl, FormGroup, ValidationErrors } from "@angular/forms";
-import differenceInYears from "src/app/shared/utils/difference-in-years";
+import { AbstractControl, FormGroup, ValidationErrors } from "@angular/forms";
 
-function isUnderAgeFn(strBirthDate: string): boolean | null {
-    if(isNaN(new Date(strBirthDate).getTime())) {
-        return null
-    }
-
-    return Math.floor(differenceInYears(new Date(), new Date(strBirthDate))) < 18;
-}
 
 @Injectable({
     providedIn: "root"
@@ -20,11 +12,6 @@ class EnrollmentDetailValidator {
 
         if(value.length === 0) {
             return { "birthDate": "É preciso fornecer uma data de nascimento." };
-        }
-
-        const splitedValue = value.split("/");
-        if(value.length !== 10 || splitedValue.length != 3) {
-            return { "birthDate": "A data deve estar no formato \"dd/MM/aaaa\"."}
         }
 
         return null;
@@ -55,67 +42,67 @@ class EnrollmentDetailValidator {
     }
 
     responsibleName(this: { formGroup: FormGroup | undefined }, control: AbstractControl): null | ValidationErrors {
-        if(!this.formGroup) {
-            return null;
-        }
+        // if(!this.formGroup) {
+        //     return null;
+        // }
 
-        const isUnderAge = isUnderAgeFn(`${this.formGroup.controls['birthDate'].value}`.trim());
-        if(isUnderAge === null) {
-            return null
-        }
+        // const isUnderAge = isUnderAgeFn(`${this.formGroup.controls['birthDate'].value}`.trim());
+        // if(isUnderAge === null) {
+        //     return null
+        // }
 
-        if(!isUnderAge) {
-            return null;
-        }
+        // if(!isUnderAge) {
+        //     return null;
+        // }
 
-        const responsibleName = `${control.value}`.trim();
-        if(responsibleName.length === 0) {
-            return { "responsibleName": "É preciso fornecer um nome para o responsável." }
-        }
+        // const responsibleName = `${control.value}`.trim();
+        // if(responsibleName.length === 0) {
+        //     return { "responsibleName": "É preciso fornecer um nome para o responsável." }
+        // }
 
         return null
     }
 
     responsibleSurname(this: { formGroup: FormGroup | undefined }, control: AbstractControl): null | ValidationErrors {
-        if(!this.formGroup) {
-            return null;
-        }
+        // if(!this.formGroup) {
+        //     return null;
+        // }
 
-        const isUnderAge = isUnderAgeFn(`${this.formGroup.controls['birthDate'].value}`.trim());
-        if(isUnderAge === null) {
-            return null
-        }
+        // const isUnderAge = isUnderAgeFn(`${this.formGroup.controls['birthDate'].value}`.trim());
+        // if(isUnderAge === null) {
+        //     return null
+        // }
 
-        if(!isUnderAge) {
-            return null;
-        }
+        // if(!isUnderAge) {
+        //     return null;
+        // }
 
-        const responsibleSurname = `${control.value}`.trim();
-        if(responsibleSurname.length === 0) {
-            return { "responsibleSurname": "É preciso fornecer um sobrenome para o responsável." }
-        }
+        // const responsibleSurname = `${control.value}`.trim();
+        // if(responsibleSurname.length === 0) {
+        //     return { "responsibleSurname": "É preciso fornecer um sobrenome para o responsável." }
+        // }
 
         return null
     }
 
     responsibleTelephone(this: { formGroup: FormGroup | undefined }, control: AbstractControl): null | ValidationErrors {
-        if(!this.formGroup) {
-            return null;
-        }
+        // if(!this.formGroup) {
+        //     return null;
+        // }
 
-        const isUnderAge = isUnderAgeFn(`${this.formGroup.controls['birthDate'].value}`.trim());
-        if(isUnderAge === null) {
-            return null
-        }
+        // const isUnderAge = isUnderAgeFn(`${this.formGroup.controls['birthDate'].value}`.trim());
+        // if(isUnderAge === null) {
+        //     return null
+        // }
 
-        if(!isUnderAge) {
-            return null;
-        }
+        // if(!isUnderAge) {
+        //     return null;
+        // }
 
-        const responsibleTelephone = `${control.value}`.trim();
-        if(responsibleTelephone.length === 0) {
-            return { "responsibleTelephone": "É preciso fornecer um telefone para o responsável." }
-        }
+        // const responsibleTelephone = `${control.value}`.trim();
+        // if(responsibleTelephone.length === 0) {
+        //     return { "responsibleTelephone": "É preciso fornecer um telefone para o responsável." }
+        // }
 
         return null
     }

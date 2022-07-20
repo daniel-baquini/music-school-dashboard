@@ -42,6 +42,6 @@ input[type='range'] {
     display: flex;
     flex-direction: row;
     gap: 8px;
-    justify-content: end;
+    justify-content: flex-end;
     width: 100%;
 }

@@ -1,5 +1,6 @@
 <app-default-data-page
     [links]="this.links"
+    [newRegistryLink]="'/students/plans/detail/new'"
     [pageTitle]="'Alunos'"
 >
     <table>
@@ -14,29 +15,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let plan of this.data">
                 <td></td>
-                <td>Andriy Belo Pegado</td>
-                <td>Guitarra</td>
-                <td>{{ 900 | currency }}</td>
-                <td>14/07/2022</td>
-                <td>14/09/2022</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Diogo Bairros Amorim</td>
-                <td>Guitarra</td>
-                <td>{{ 900 | currency }}</td>
-                <td>14/07/2022</td>
-                <td>14/09/2022</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Levi Lage Belchior</td>
-                <td>Guitarra</td>
-                <td>{{ 900 | currency }}</td>
-                <td>14/07/2022</td>
-                <td>14/09/2022</td>
+                <td
+                    class="link-cell"
+                    [routerLink]="'/students/plans/detail/' + plan.id"
+                >{{plan.studentName}}</td>
+                <td>{{plan.courseName}}</td>
+                <td>{{plan.value | currency}}</td>
+                <td>{{plan.startDate | date: 'yyyy/MM/dd'}}</td>
+                <td>{{plan.endDate | date: 'yyyy/MM/dd'}}</td>
             </tr>
         </tbody>
     </table>

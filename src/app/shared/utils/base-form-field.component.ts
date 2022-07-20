@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { AbstractControl } from "@angular/forms";
 import BaseControlValueAccessor from "./base-control-value-acessor.model";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import HTMLInputType from "./html-input-type.type";
 
 @Component({
@@ -11,6 +11,7 @@ export class BaseFormField extends BaseControlValueAccessor<string> {
     @Input() abstractControl: AbstractControl | undefined;
     @Input() helperText: string = "";
     @Input() label: string = "";
+    @Input() mask: ((s: string) => string) | undefined
     @Input() readOnly: boolean = false;
     @Input() type: HTMLInputType = "text";
     @Output() inputEvent = new EventEmitter<string>();
@@ -28,7 +29,7 @@ export class BaseFormField extends BaseControlValueAccessor<string> {
         return errorMessage;
     }
     
-    formFieldOnChange(event: Event): void {
+    formFieldOnChange(event: Event): void {        
         this.inputEvent.emit((event.target as HTMLInputElement).value);
         this.onBaseChangeFn(event);
     }

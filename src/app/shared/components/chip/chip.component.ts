@@ -6,6 +6,6 @@ import { Component, HostBinding, Input } from '@angular/core';
     styleUrls: ['./chip.component.css']
 })
 export class ChipComponent {
-    @HostBinding('class.active') activeClass: boolean = false;    
+    @HostBinding('class.active') @Input() isActive: boolean = false;    
     @Input() label: string = "";
 }

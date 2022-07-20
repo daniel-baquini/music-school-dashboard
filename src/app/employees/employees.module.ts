@@ -4,7 +4,7 @@ import { EmployeeDetailComponent } from './employee-detail-page/employee-detail-
 import { EmployeesPageComponent } from './employees-page/employees-page.component';
 import { EmployeeWorkingTimeComponent } from './employee-working-time/employee-working-time.component';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import TopMenuLink from '../shared/components/top-menu/top-menu-link.model';
@@ -53,6 +53,7 @@ export const employeesTopLinks: TopMenuLink[] = [
         EmployeeWorkingTimeComponent
     ],
     imports: [
+        FormsModule,
         ReactiveFormsModule,
         RouterModule.forChild(employeesRoutes),
         SharedModule

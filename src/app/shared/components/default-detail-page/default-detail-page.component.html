@@ -11,5 +11,6 @@
     </div>
 </app-default-page>
 <app-loading-modal
+    [message]="'Carregando o registro, por favor, aguarde.'"
     *ngIf="this.isLoadingData"
 ></app-loading-modal>

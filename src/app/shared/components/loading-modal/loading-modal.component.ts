@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-loading-modal',
     templateUrl: './loading-modal.component.html',
     styleUrls: ['./loading-modal.component.css']
 })
-export class LoadingModalComponent { }
+export class LoadingModalComponent {
+    @Input() message: string = "";
+}

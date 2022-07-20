@@ -1,4 +1,12 @@
 :host {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.working-hour {
+    align-items: center;
     background-color: var(--c-white-20);
     border-radius: 4px;
     display: flex;
@@ -7,7 +15,33 @@
     padding: 20px 12px;
 }
 
-:host.active {
+.working-hour.active {
     background-color: var(--c-white-10);
     border: 1px solid var(--c-primary-60)
+}
+
+.week-day {
+    color: var(--c-dark-80);
+}
+
+.field-group {
+    align-items: flex-end;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input {
+    background: transparent;
+    border: none;
+    color: var(--c-dark-80);
+    flex: 1;
+    outline: none;
+    text-align: right;
+}
+
+.error-message {
+    color: var(--c-red-60);
+    padding-left: 16px;
 }

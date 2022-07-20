@@ -2,6 +2,7 @@
     align-items: center;
     border: 1px solid var(--c-dark-40);
     border-radius: 50vh;
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     gap: 8px;
