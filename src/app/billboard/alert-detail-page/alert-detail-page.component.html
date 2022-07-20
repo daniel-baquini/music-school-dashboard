@@ -17,6 +17,7 @@
         <div class="col-8">
             <app-bordered-field 
                 [abstractControl]="this.form.controls['content']"
+                [fieldConfig]="{ type: 'textarea' }"
                 [label]="'Conteúdo'"
                 formControlName="content"
             ></app-bordered-field>

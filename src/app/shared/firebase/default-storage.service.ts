@@ -1,4 +1,4 @@
-import { getDownloadURL, ref, Storage, StorageError, uploadBytesResumable, UploadTaskSnapshot } from '@angular/fire/storage';
+import { getDownloadURL, ref, Storage, StorageError, uploadBytesResumable, UploadTask, UploadTaskSnapshot } from '@angular/fire/storage';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,6 +7,17 @@ import { Injectable } from '@angular/core';
 export class DefaultStorageService {
     
     constructor(private storage: Storage) { }
+
+    async uploadFile(
+        file: File,
+        storageAddress: string,
+        progressTracker: undefined | ((progress: number) => void)
+    ): Promise<string> {
+        const storageRef = ref(this.storage, storageAddress);
+        const uploadTask = uploadBytesResumable(storageRef, file);
+
+        return this.returnWithProgressTracker(uploadTask, progressTracker)
+    }
 
     async uploadBase64Image(
         base64Image: string,
@@ -26,6 +37,14 @@ export class DefaultStorageService {
         const storageRef = ref(this.storage, storageAddress);
         const uploadTask = uploadBytesResumable(storageRef, blob);
 
+        return this.returnWithProgressTracker(uploadTask, progressTracker)
+    }
+
+
+    private returnWithProgressTracker(
+        uploadTask: UploadTask,
+        progressTracker: undefined | ((progress: number) => void)
+    ) {
         return new Promise<string>((resolve, reject) => {
             uploadTask.on("state_changed",
                 (snapshot: UploadTaskSnapshot) => {
