@@ -8,6 +8,7 @@ import { ScheduleClassesPageComponent } from './schedule-classes-page/schedule-c
 import { SharedModule } from '../shared/shared.module';
 import TopMenuLink from '../shared/components/top-menu/top-menu-link.model';
 import { ReescheduleSolicitationsPageComponent } from './reeschedule-solicitations-page/reeschedule-solicitations-page.component';
+import { ReescheduleSolicitationsComponent } from './reeschedule-solicitation/reeschedule-solicitation.component';
 
 const attendanceListRoutes: Routes = [
     {
@@ -22,6 +23,15 @@ const attendanceListRoutes: Routes = [
     {
         component: ScheduleClassDetailPageComponent,
         path: "schedule-classes/detail/:id"
+    },
+
+
+
+    
+
+    {
+        component: ReescheduleSolicitationsPageComponent,
+        path: "reeschedule-solicitations"
     }
 ];
 
@@ -29,6 +39,10 @@ export const attendanceListTopLinks: TopMenuLink[] = [
     {
         label: "Marcar aula",
         link: "/attendance-list/schedule-classes"
+    },
+    {
+        label: "Solicitações para remarcar aulas",
+        link: "/attendance-list/reeschedule-solicitations"
     }
 ];
 
@@ -38,7 +52,8 @@ export const attendanceListTopLinks: TopMenuLink[] = [
         ProfessorAgendaComponent,
         ScheduleClassDetailPageComponent,
         ScheduleClassesPageComponent,
-        ReescheduleSolicitationsPageComponent
+        ReescheduleSolicitationsPageComponent,
+        ReescheduleSolicitationsComponent
     ],
     imports: [
         ReactiveFormsModule,

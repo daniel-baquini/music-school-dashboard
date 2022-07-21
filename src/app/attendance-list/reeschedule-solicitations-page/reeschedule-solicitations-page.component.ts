@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { attendanceListTopLinks } from '../attendance-list.module';
+import { Component } from '@angular/core';
+import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model';
 
 @Component({
-  selector: 'app-reeschedule-solicitations-page',
-  templateUrl: './reeschedule-solicitations-page.component.html',
-  styleUrls: ['./reeschedule-solicitations-page.component.css']
+    selector: 'app-reeschedule-solicitations-page',
+    templateUrl: './reeschedule-solicitations-page.component.html',
+    styleUrls: ['./reeschedule-solicitations-page.component.css']
 })
-export class ReescheduleSolicitationsPageComponent implements OnInit {
+export class ReescheduleSolicitationsPageComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    links: TopMenuLink[] = attendanceListTopLinks;
+    
 }

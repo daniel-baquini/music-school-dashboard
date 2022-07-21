@@ -1,0 +1,27 @@
+:host {
+    display: contents;
+}
+
+.content-window {
+    align-items: flex-start;
+    background-color: var(--c-white-10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    max-width: 840px;
+    padding: 32px;
+    gap: 24px;
+    width: 100%;
+}
+
+.hint, .hint > * {
+    display: inline;
+}
+
+.hint {
+    color: var(--c-dark-80);
+}
+
+.hint > * {
+    color: var(--c-dark-60);
+}

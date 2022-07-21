@@ -1,1 +1,13 @@
-<p>reeschedule-solicitations-page works!</p>
+<app-default-page
+    [links]="this.links"
+    [pageTitle]="'Lista de presença'"
+>
+    <div class="content-window global-shadow">
+        <span class="hint text-preset-400">
+            Dica: <div class="text-preset-340">Clique no ícone a direita da notificação para marcar ela como lida</div>
+        </span>
+    </div>
+    <div class="content-window global-shadow">
+        <app-reeschedule-solicitation></app-reeschedule-solicitation>
+    </div>
+</app-default-page>
