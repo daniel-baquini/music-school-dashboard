@@ -1,0 +1,83 @@
+<app-default-detail-page
+    [createCallback]="this.scheduleClassService.create.bind(this.scheduleClassService)"
+    [form]="this.form"
+    [links]="this.links"
+    [loadDataCallback]="this.scheduleClassService.read.bind(this.scheduleClassService)"
+    *ngIf="!this.isLoading"
+    [pageTitle]="'Lista de presença'"
+    [returnLink]="'/attendance-list/schedule-classes'"
+    [updateCallback]="this.scheduleClassService.update.bind(this.scheduleClassService)"
+>
+    <div class="grid" [formGroup]="this.form">
+        <div class="col-8">
+            <app-divider [label]="'Dados da aula'"></app-divider>
+        </div>
+        <div class="col-8">
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['studentName']"
+                (change)="this.updatePlansSelectData($event)"
+                [fieldConfig]="{ data: this.studentsSelectData, type: 'select' }"
+                formControlName="studentName"
+                [label]="'Nome'"
+            ></app-bordered-field>
+        </div>
+        <div class="col-4">
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['classDate']"
+                formControlName="classDate"
+                [label]="'Próxima aula'"
+                [type]="'date'"
+            ></app-bordered-field>
+        </div>
+        <div class="col-4">
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['plan']"
+                (change)="this.updateProfessorsSelectData($event)"
+                [fieldConfig]="{ data: this.plansSelectData, type: 'select' }"
+                formControlName="plan"
+                [label]="'Plano'"
+            ></app-bordered-field>
+        </div>
+        <div class="col-4">
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['professorName']"
+                (change)="this.updateProfessorAgenda($event)"
+                [fieldConfig]="{ data: this.professorsSelectData, type: 'select' }"
+                formControlName="professorName"
+                [label]="'Professor'"
+            ></app-bordered-field>
+        </div>
+        <div class="col-2">
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['classStartTime']"
+                formControlName="classStartTime"
+                [label]="'Início da aula'"
+                [type]="'time'"
+            ></app-bordered-field>
+        </div>
+        <div class="col-2">
+            <app-bordered-field 
+                [abstractControl]="this.form.controls['classEndTime']"
+                formControlName="classEndTime"
+                [label]="'Fim da aula'"
+                [type]="'time'"
+            ></app-bordered-field>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-8">
+            <app-divider [label]="'Agenda do professor'"></app-divider>
+        </div>
+        <div class="col-8">
+            <app-professor-agenda
+                [newClass]="this.newClass"
+                [date]="this.form.controls['classDate'].value"
+                [employee]="this.selectedProfessor"
+            ></app-professor-agenda>
+        </div>
+    </div>
+</app-default-detail-page>
+<app-loading-modal
+    [message]="this.loadingMessage"
+    *ngIf="this.isLoading"
+></app-loading-modal>

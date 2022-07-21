@@ -21,6 +21,7 @@ export class CourseDetailPageComponent {
         validator: CourseDetailValidator
     ) {
         this.form = formBuilder.group({
+            "isActive": new FormControl("", [validator.isActive]),
             "name": new FormControl("", [validator.name])
         });
     }

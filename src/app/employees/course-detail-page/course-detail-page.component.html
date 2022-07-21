@@ -14,5 +14,14 @@
                 formControlName="name"
             ></app-bordered-field>
         </div>
+        <div class="col-4">
+            <app-radio-button-group 
+                [abstractControl]="this.form.controls['isActive']"
+                [form]="this.form"
+                [formControlName]="'isActive'"
+                [label]="'Curso ativo?'"
+                [radioValues]="[{ label: 'Não', value: false }, { label: 'Sim', value: true }]"
+            ></app-radio-button-group>
+        </div>
     </div>
 </app-default-detail-page>

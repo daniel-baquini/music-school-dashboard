@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import Class from 'src/app/shared/firebase/schedule-class/class.model';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-class-post-it',
@@ -9,5 +10,5 @@ import { Component, OnInit } from '@angular/core';
     }
 })
 export class ClassPostItComponent {
-        
+    @Input() class: Class | undefined;
 }

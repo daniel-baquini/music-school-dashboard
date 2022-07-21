@@ -4,7 +4,6 @@
     border-radius: 8px;
     display: flex;
     flex-direction: row;
-    height: 200px;
     overflow: hidden;
     position: absolute;
     width: 256px;
@@ -12,9 +11,24 @@
 }
 
 .status {
-    background-color: red;
     height: 100%;
     width: 12px;
+}
+
+.status.break {
+    background-color: var(--c-yellow-10);    
+}
+
+.status.busy {
+    background-color: var(--c-red-10);
+}
+
+.status.free {
+    background-color: var(--c-green-20);
+}
+
+.status.not-avaliable {
+    background-color: var(--c-dark-10);
 }
 
 .class-data {
@@ -23,6 +37,10 @@
     flex-direction: row;
     gap: 12px;
     padding: 8px 12px;
+}
+
+.status.break > .class-data, .status.not-avaliable > .class-data {
+    display: none;
 }
 
 .class-data__student-photo-wrapper {
@@ -43,4 +61,9 @@
 
 .student-data__class {
     color: var(--c-dark-40);
+}
+
+.status-description {
+    color: var(--c-dark-60);
+    padding-left: 12px;
 }

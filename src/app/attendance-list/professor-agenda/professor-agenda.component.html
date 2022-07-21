@@ -14,5 +14,18 @@
             style="top: 30px"        
         ></div>
     </div>
-    <app-class-post-it></app-class-post-it>
+    <app-class-post-it
+        [class]="class"
+        *ngFor="let class of this.classes"
+        [ngStyle]="{'height': ((_hourStrToNumber(class.classEndTime) - _hourStrToNumber(class.classStartTime))*120) + 'px',
+                    'top': (30 + (_hourStrToNumber(class.classStartTime)*120)) + 'px' }"
+    ></app-class-post-it>
+    
+    <app-class-post-it
+        [class]="_newClass"
+        *ngIf="this._newClass"
+        [ngStyle]="{'height': ((_hourStrToNumber(_newClass.classEndTime) - _hourStrToNumber(_newClass.classStartTime))*120) + 'px',
+                    'left': '256px',
+                    'top': (30 + (_hourStrToNumber(_newClass.classStartTime)*120)) + 'px'}"
+    ></app-class-post-it>
 </div>

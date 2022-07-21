@@ -36,7 +36,7 @@ export class EmployeeDetailComponent  {
                 "name": new FormControl("", [validator.name]),
                 "photoUrl": new FormControl(""),
                 "surname": new FormControl("", [validator.surname]),
-                "workingTime": formBuilder.array([])
+                "workingTimes": formBuilder.array([])
             });
 
             this._subscriptions.push(
@@ -65,8 +65,8 @@ export class EmployeeDetailComponent  {
             return "Carregando cursos";      
         }
 
-        get workingTimeForm(): FormArray {
-            return this.form.controls["workingTime"] as FormArray;
+        get workingTimesForm(): FormArray {
+            return this.form.controls["workingTimes"] as FormArray;
         }
         
         callImageCropper(imageUrl: string): void {

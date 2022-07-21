@@ -31,7 +31,6 @@ export class DefaultFirestoreService {
     }
 
     async update(pathToCollection: string, data: any) {
-        console.log(data)
         return setDoc(
             doc(this.firestore, `${pathToCollection}/${data.id}`),
             data

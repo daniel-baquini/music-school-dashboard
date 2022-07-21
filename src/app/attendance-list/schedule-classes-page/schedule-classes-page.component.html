@@ -1,0 +1,27 @@
+<app-default-data-page
+    [links]="this.links"
+    [newRegistryLink]="'/attendance-list/schedule-classes/detail/new'"
+    [pageTitle]="'Lista de presença'"
+>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Aluno</th>
+                <th>Dia</th>
+                <th>Horário</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let class of this.data">
+                <td></td>
+                <td
+                    class="link-cell"
+                    [routerLink]="'/attendance-list/schedule-classes/detail/' + class.id"
+                >{{class.studentName}}</td>
+                <td>{{class.classDate | date: "yyyy/MM/dd" }}</td>
+                <td>{{class.classStartTime + " - " + class.classEndTime}}</td>
+            </tr>
+        </tbody>
+    </table>
+</app-default-data-page>

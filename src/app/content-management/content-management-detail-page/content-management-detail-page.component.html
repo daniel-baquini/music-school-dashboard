@@ -2,7 +2,7 @@
     [links]="this.links"
     [pageTitle]="'Avisos'"
 >
-    <div class="grid">
+    <div class="grid" [formGroup]="this.form">
         <div class="col-8">
             <app-divider [label]="'Dados do conteúdo'"></app-divider>
         </div>
@@ -38,15 +38,20 @@
             ></app-bordered-field>
         </div>
     </div>
-    <div class="grid">
+    <div class="grid" [formGroup]="this.form">
         <div class="col-8">
             <app-divider [label]="'Conteúdo'"></app-divider>
         </div>
         <div class="col-8">
-            <app-file-upload></app-file-upload>
+            <app-file-upload
+                *ngIf="this.form.controls['contentType'].value === 'file'"
+            ></app-file-upload>
         </div>
         <div class="col-8">
-            <app-bordered-field [label]="'Link do vídeo'"></app-bordered-field>
+            <app-bordered-field
+                *ngIf="this.form.controls['contentType'].value === 'video'"
+                [label]="'Link do vídeo'"
+            ></app-bordered-field>
         </div>
     </div>
 

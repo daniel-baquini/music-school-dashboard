@@ -43,7 +43,6 @@ export class EnrollmentDetailPageComponent {
     }
 
     callImageCropper(imageUrl: string): void {
-        console.log("alo pensamento")
         this.form.controls["photoUrl"].setValue(imageUrl);
         this.showImageCropper = true;
     }

@@ -58,7 +58,6 @@ export class PhotoUploadComponent {
     }
     
     updatePreview() {
-        console.log("conselho")
         if(!this.inputField.files) return;
 
         const file: File | null = this.inputField.files[0];

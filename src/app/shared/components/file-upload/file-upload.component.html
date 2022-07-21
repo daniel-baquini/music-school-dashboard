@@ -1,4 +1,24 @@
 <div class="photo-preview">
-    <div class="photo-preview__placeholder"></div>
+    <div class="photo-preview__placeholder">
+        <span class="icon-attachment placeholder__icon"></span>
+    </div>
 </div>
-<span class="text-preset-400 upload-instructions">Clique para escolher um arquivo, ou arraste-o aqui</span>
+<div class="instructions">
+    <div class="intructions__upload-instructions">
+        <span class="text-preset-400 upload-instructions__drag-or-click-to-upload">Clique para escolher um arquivo, ou arraste-o aqui</span>
+        <span
+            class="text-preset-290 upload-instructions__original-file-name"
+            *ngIf="this.fileName !== ''"
+        >Arquivo original: {{this.fileName}}</span>
+    </div>
+    <span
+        class="instructions__delete-file text-preset-290"
+        (click)="this.onDeleteFileClick($event)"
+        *ngIf="this.fileName !== ''"
+    >Excluir arquivo</span>
+</div>
+<input
+    (change)="this.updatePreview()"
+    #inputField style="display: none;"
+    type="file"
+>

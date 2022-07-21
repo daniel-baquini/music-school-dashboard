@@ -6,6 +6,16 @@ import { Injectable } from "@angular/core";
 })
 class CourseDetailValidator {
 
+    isActive(control: AbstractControl): null | ValidationErrors {
+        const value = `${control.value}`.trim();
+
+        if(value.length === 0) {
+            return { "isActive": "É preciso dizer se o curso está ativo ou não." }
+        }
+
+        return null;
+    }
+
     name(control: AbstractControl): null | ValidationErrors {
         const value = `${control.value}`.trim();
 

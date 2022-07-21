@@ -1,4 +1,4 @@
-<ng-container formArrayName="workingTime" *ngIf="this.formArray">
+<ng-container formArrayName="workingTimes" *ngIf="this.formArray">
     <div
         class="working-hour"
         *ngFor="let workingTime of this.formArray.controls; let i = index" [formGroupName]="i"
