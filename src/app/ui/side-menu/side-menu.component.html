@@ -1,0 +1,56 @@
+<div class="global-shadow side-menu">
+    <ui-logo></ui-logo>
+    <div class="side-menu__links">
+        <div class="links__module-link" [routerLink]="'/students'" [routerLinkActive]="'links__module-link--active'">
+            <div class="module-link__indicator"></div>
+            <div class="module-link__label-wrapper">
+                <span class="label-wrapper__icon">
+                    <span class="icon-school"></span>
+                </span>
+                <span class="label-wrapper__label text-preset-400">Alunos</span>
+            </div>
+        </div>
+        <div class="links__module-link" [routerLink]="'/billboard'" [routerLinkActive]="'links__module-link--active'">
+            <div class="module-link__indicator"></div>
+            <div class="module-link__label-wrapper">
+                <span class="label-wrapper__icon">
+                    <span class="icon-warning"></span>
+                </span>
+                <span class="label-wrapper__label text-preset-400">Avisos</span>
+            </div>
+        </div>
+        <div class="links__module-link" [routerLink]="'/employees'" [routerLinkActive]="'links__module-link--active'">
+            <div class="module-link__indicator"></div>
+            <div class="module-link__label-wrapper">
+                <span class="label-wrapper__icon">
+                    <span class="icon-employees"></span>
+                </span>
+                <span class="label-wrapper__label text-preset-400">Colaboradores</span>
+            </div>
+        </div>
+        <div class="links__module-link" [routerLink]="'/content-management'" [routerLinkActive]="'links__module-link--active'">
+            <div class="module-link__indicator"></div>
+            <div class="module-link__label-wrapper">
+                <span class="label-wrapper__icon">
+                    <span class="icon-content"></span>
+                </span>
+                <span class="label-wrapper__label text-preset-400">Gerenciar conteúdo</span>
+            </div>
+        </div>
+        <div class="links__module-link" [routerLink]="'/attendance-list'" [routerLinkActive]="'links__module-link--active'">
+            <div class="module-link__indicator"></div>
+            <div class="module-link__label-wrapper">
+                <span class="label-wrapper__icon">
+                    <span class="icon-attendance-list"></span>
+                </span>
+                <span class="label-wrapper__label text-preset-400">Lista de presença</span>
+            </div>
+        </div>
+    </div>
+    <div class="side-menu__user-info">
+        <div class="user-info__user-data">
+            <div class="user-data__photo-wrapper"></div>
+            <span class="text-preset-350 user-data__user-nama">Dono do estabelecimento</span>
+        </div>
+    </div>
+</div>

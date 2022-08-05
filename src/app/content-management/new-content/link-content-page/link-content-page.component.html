@@ -1,0 +1,23 @@
+<ui-form-step
+    [currentStep]="4"
+    [stepTitle]="'Informe o link do arquivo'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<form class="grid" [formGroup]="this.form" [noValidate]>
+    <div class="col-8">
+        <app-bordered-field
+            [abstractControl]="this.form.controls.contentUrl"
+            formControlName="contentUrl"
+            [label]="'Link do conteúdo'"
+            [type]="'text'"
+        ></app-bordered-field>
+    </div>
+</form>
+
+<ui-buttons-row
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Salvar conteúdo'"
+    (tertiaryButtonClick)="this.navigateToContentType()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

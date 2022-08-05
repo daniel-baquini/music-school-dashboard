@@ -1,0 +1,77 @@
+<ui-default-detail-page [links]="this.links" [pageTitle]="this.pageTitle">
+    <ui-loading-message [label]="'Carregando dados da aula'" *ngIf="this.isLoading"></ui-loading-message>
+    <ng-container *ngIf="!this.isLoading">
+        <div class="photo-preview">
+            <img alt="Preview da foto enviada">
+            <div class="photo-preview__placeholder">
+                <span class="icon-user placeholder__icon"></span>
+            </div>
+        </div>
+        <div class="instructions">
+            <div class="instructions__upload-instructions">
+                <span class="text-preset-400 upload-instructions__drag-or-click-to-upload">
+                    {{this.form.controls.student.controls.name.value + " " + this.form.controls.student.controls.surname.value}}
+                </span>
+                <!-- <span class="text-preset-290 upload-instructions__allowed-files">{{this.form.controls.}}</span> -->
+            </div>
+        </div>
+    
+        <form class="grid" [formGroup]="this.form" [noValidate]="">
+            <div class="col-4">
+                <ui-bordered-field
+                    [disabled]="true"
+                    [label]="'Curso'"
+                    [type]="'text'"
+                    [value]="this.form.controls.plan.controls.course.controls.name.value"
+                ></ui-bordered-field>
+            </div>
+            <div class="col-4">
+                <ui-bordered-field
+                    [disabled]="true"
+                    [label]="'Professor'"
+                    [type]="'text'"
+                    [value]="this.form.controls.professor.controls.name.value"
+                ></ui-bordered-field>
+            </div>
+            <div class="col-4">
+                <ui-bordered-field
+                    [disabled]="true"
+                    [label]="'Dia da aula'"
+                    [type]="'text'"
+                    [value]="this.timeStampToyyyyMMdd(this.form.controls.classDate.value)"
+                ></ui-bordered-field>
+            </div>
+            <div class="col-2">
+                <ui-bordered-field
+                    [disabled]="true"
+                    [label]="'Início da aula'"
+                    [type]="'text'"
+                    [value]="this.form.controls.classStartTime.value | hourMinute"
+                ></ui-bordered-field>
+            </div>
+            <div class="col-2">
+                <ui-bordered-field
+                    [disabled]="true"
+                    [label]="'Fim da aula'"
+                    [type]="'text'"
+                    [value]="this.form.controls.classEndTime.value | hourMinute"
+                ></ui-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-radio-button-group 
+                    [abstractControl]="this.form.controls.status"
+                    [form]="this.form"
+                    [formControlName]="'status'"
+                    [label]="'Status da aula'"
+                    [radioValues]="[{ label: 'Compareceu', value: 'Showed up' }, { label: 'Faltou', value: 'Missed' }, { label: 'Pendente', value: 'Pending' }, { label: 'Reagendar', value: 'Reschedule' }]"
+                ></app-radio-button-group>
+            </div>
+        </form>
+        <ui-buttons-row
+            (primaryButtonClick)="this.saveChanges()"
+            [primaryButtonLabel]="'Salvar alterações'"
+            (tertiaryButtonClick)="this.goToScheduleClasses()"
+            [tertiaryButtonLabel]="'Voltar'"
+        ></ui-buttons-row>
+    </ng-container>
+</ui-default-detail-page>

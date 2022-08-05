@@ -29,10 +29,14 @@ const studentsRoutes: Routes = [
     {
         component: PlanDetailPageComponent,
         path: "plans/detail/:id"
+    },
+    {
+        loadChildren: () => import("./new-plan/new-plan.module").then(m => m.NewPlanModule),
+        path: "plans/new"
     }
 ]
 
-export const studentsTopLinks: TopMenuLink[] = [
+export const enrollmentsTopLinks: TopMenuLink[] = [
     {
         label: "Matrículas",
         link: "/students/enrollments"

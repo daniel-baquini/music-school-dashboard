@@ -7,6 +7,7 @@ import { connectStorageEmulator, getStorage, provideStorage } from '@angular/fir
 import { environment } from 'src/environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { NgModule } from '@angular/core';
+import { UIModule } from './ui/ui.module';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import { NgModule } from '@angular/core';
             }
 
             return storage;
-        })
+        }),
+        UIModule
     ],
     providers: [],
     bootstrap: [AppComponent]

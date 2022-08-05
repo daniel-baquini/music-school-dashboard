@@ -1,0 +1,37 @@
+<ui-form-step
+    [currentStep]="2"
+    [stepTitle]="'Escolher curso'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<ui-loading-message
+    [label]="'Carregando cursos'"
+    *ngIf="this.state.name === 'Searching'"
+></ui-loading-message>
+
+<ui-alert
+    *ngIf="this.state.name === 'No results'"
+    [message]="'Nenhum curso encontrado'"
+    [type]="'warning'"
+></ui-alert>
+
+<div
+    class="courses"
+    *ngIf="this.state.name === 'Show results' || this.state.name === 'Selected'"
+>
+    <ui-radio-button-card
+        (click)="this.onSelected(course)"
+        [isActive]="course.id === this.form.controls.course.controls.id.value"
+        *ngFor="let course of this.courses"
+    >
+        <span class="course-name text-preset-400" center-content>{{this.course.name}}</span>
+    </ui-radio-button-card>
+</div>
+
+<ui-buttons-row
+    *ngIf="this.state.name !== 'Searching'"
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Próximo'"
+    (tertiaryButtonClick)="this.navigateToStudent()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

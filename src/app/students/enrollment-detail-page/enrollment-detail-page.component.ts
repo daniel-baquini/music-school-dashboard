@@ -2,7 +2,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/f
 import { Component } from '@angular/core';
 import EnrollmentDetailValidator from './enrollment-detail.validator';
 import { EnrollmentService } from 'src/app/shared/firebase/enrollments/enrollment.service';
-import { studentsTopLinks } from '../students.module';
+import { enrollmentsTopLinks } from '../students.module';
 import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model';
 
 @Component({
@@ -13,7 +13,7 @@ import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model'
 export class EnrollmentDetailPageComponent {
 
     form: FormGroup;
-    links: TopMenuLink[] = studentsTopLinks;
+    links: TopMenuLink[] = enrollmentsTopLinks;
     showImageCropper: boolean = false;
     showUploadingModal: boolean = false;
 

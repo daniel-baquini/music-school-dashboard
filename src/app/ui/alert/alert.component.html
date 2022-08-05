@@ -1,0 +1,7 @@
+<div class="host {{this.type}}">
+    <span class="icon-error message-icon"></span>
+    <span class="icon-check-filled message-icon"></span>
+    <span class="icon-warning-filled message-icon"></span>
+    <span class="message text-preset-460">{{this.message}}</span>
+    <span class="close-icon icon-close" (click)="this.close.emit()" *ngIf="this.canClose"></span>
+</div>

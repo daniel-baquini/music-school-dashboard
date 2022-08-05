@@ -1,1 +1,5 @@
-<button class="text-preset-450">{{this.label}}</button>
+<button
+    class="text-preset-450"
+    (click)="this.onClick($event)"
+    [disabled]="this.disabled"
+>{{this.label}}</button>

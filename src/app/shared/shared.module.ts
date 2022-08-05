@@ -17,9 +17,14 @@ import { RadioButtonGroupComponent } from './components/radio-button-group/radio
 import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { SearchFieldComponent } from './components/search-field/search-field.component';
+import { UIModule } from '../ui/ui.module';
+import { HourMinutePipe } from './pipes/hour-minute.pipe';
 
 @NgModule({
     declarations: [
+        AlertComponent,
         BorderedFieldComponent,
         ChipComponent,
         DefaultDataPageComponent,
@@ -34,9 +39,12 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent
+        TopMenuComponent,
+        SearchFieldComponent,
+        HourMinutePipe
     ],
     exports: [
+        AlertComponent,
         BorderedFieldComponent,
         ChipComponent,
         CommonModule,
@@ -52,13 +60,17 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
         PrimaryButtonComponent,
         RadioButtonGroupComponent,
         SideMenuComponent,
-        TopMenuComponent
+        TopMenuComponent,
+        UIModule,
+        SearchFieldComponent,
+        HourMinutePipe
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule
+        RouterModule,
+        UIModule
     ]
 })
 export class SharedModule { }

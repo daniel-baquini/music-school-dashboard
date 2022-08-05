@@ -1,20 +1,20 @@
 import { DefaultFirestoreService } from '../default-firestore.service';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import Plan from './plan.model';
-import { Timestamp } from 'firebase/firestore';
+import { DocumentReference, where } from 'firebase/firestore';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PlanService {
-    
+
     public readonly PATH_TO_COLLECTION: string = "plans";
 
     constructor(private defaultFirestore: DefaultFirestoreService) { }
 
-    async create(data: Plan) {
-        this.defaultFirestore.create(this.PATH_TO_COLLECTION, data);
+    async create(data: Plan): Promise<DocumentReference<Plan>> {
+        return this.defaultFirestore.create<Plan>(this.PATH_TO_COLLECTION, data);
     }
 
     async read(id: string): Promise<Plan | undefined> {
@@ -23,6 +23,16 @@ export class PlanService {
 
     readAll() {
         return this.defaultFirestore.readAll<Plan>(this.PATH_TO_COLLECTION);
+    }
+
+    readAllNotFinishedByStudentId(studentId: string): Observable<Plan[]> {
+        return this.defaultFirestore.customQuery(
+            this.PATH_TO_COLLECTION,
+            [
+                where("isFinished", "==", false),
+                where("student.id", "==", studentId)
+            ]
+        );
     }
 
     update(data: Plan) {

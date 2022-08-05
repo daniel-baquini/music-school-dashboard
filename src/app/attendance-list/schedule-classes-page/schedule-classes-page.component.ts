@@ -1,8 +1,9 @@
 import { attendanceListTopLinks } from '../attendance-list.module';
 import { Component } from '@angular/core';
 import TopMenuLink from 'src/app/shared/components/top-menu/top-menu-link.model';
-import Class from 'src/app/shared/firebase/schedule-class/class.model';
+import MusicClass from 'src/app/shared/firebase/schedule-class/music-class.model';
 import { ScheduleClassService } from 'src/app/shared/firebase/schedule-class/schedule-class.service';
+import { Timestamp } from 'firebase/firestore';
 
 @Component({
     selector: 'app-schedule-classes-page',
@@ -11,7 +12,7 @@ import { ScheduleClassService } from 'src/app/shared/firebase/schedule-class/sch
 })
 export class ScheduleClassesPageComponent {
 
-    data: Class[] = [];
+    data: MusicClass[] = [];
     dataLoaded: boolean = false;
     links: TopMenuLink[] = attendanceListTopLinks;
 
@@ -20,6 +21,11 @@ export class ScheduleClassesPageComponent {
             this.dataLoaded = true;
             this.data = x;
         })
+    }
+
+    getAsDate(timeStamp: any): Date {
+        const value = timeStamp as Timestamp;
+        return value.toDate();
     }
     
 }

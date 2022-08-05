@@ -1,0 +1,13 @@
+:host {
+    display: contents;
+}
+
+.courses {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.course-name {
+    color: var(--c-dark-80);
+}

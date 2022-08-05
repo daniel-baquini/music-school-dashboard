@@ -36,7 +36,7 @@ export class ContentManagementService {
     async uploadFile(model: ContentManagement, file: File, progressTracker: (progress: number) => void): Promise<string> {
         return this.defaultStorage.uploadFile(
             file,
-            `course-content/${model.courseName}/${uniqueIdGenerator()}}`,
+            `course-content/${model.course.name}/${uniqueIdGenerator()}}`,
             progressTracker
         );
     }

@@ -1,0 +1,38 @@
+<ui-form-step
+    [currentStep]="3"
+    [stepTitle]="'Escolher data de início e fim do plano'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<ui-alert
+    [canClose]="false"
+    *ngIf="!!this.error"
+    [message]="this.error"
+    [type]="'error'"
+></ui-alert>
+
+<form class="grid" [formGroup]="this.form" [noValidate]="">
+    <div class="col-4">
+        <app-bordered-field 
+            [abstractControl]="this.form.controls.startDate"
+            formControlName="startDate"
+            [label]="'Data de início'"
+            [type]="'date'"
+        ></app-bordered-field>
+    </div>
+    <div class="col-4">
+        <app-bordered-field 
+            [abstractControl]="this.form.controls.endDate"
+            formControlName="endDate"
+            [label]="'Data de vencimento'"
+            [type]="'date'"
+        ></app-bordered-field>
+    </div>
+</form>
+
+<ui-buttons-row
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Próximo'"
+    (tertiaryButtonClick)="this.navigateToCourse()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

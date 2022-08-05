@@ -1,0 +1,38 @@
+<ui-form-step
+    [currentStep]="3"
+    [stepTitle]="'Escolher o tipo de conteúdo'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<div class="content-types">
+    <ui-radio-button-card
+        (click)="this.form.controls.contentType.setValue('file')"
+        [isActive]="this.form.controls.contentType.value === 'file'"
+    >
+        <div class="content-type">
+            <span class="content-type__name text-preset-400">Arquivo</span>
+            <span class="content-type__description text-preset-290">
+                Utilizado para enviar arquivos quaisquer (PDFs, imagens, arquivo word, planilhas em excel, etc...).
+            </span>
+        </div>
+    </ui-radio-button-card>
+
+    <ui-radio-button-card
+        (click)="this.form.controls.contentType.setValue('link')"
+        [isActive]="this.form.controls.contentType.value === 'link'"
+    >
+        <div class="content-type">
+            <span class="content-type__name text-preset-400">Link</span>
+            <span class="content-type__description text-preset-290">
+                Ao clicar neste conteúdo, o usuário será redirecionado para uma página onde o conteúdo poderá ser visualizado. É uma boa opção para vídeos.
+            </span>
+        </div>
+    </ui-radio-button-card>
+</div>
+
+<ui-buttons-row
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Próximo'"
+    (tertiaryButtonClick)="this.navigateToCourses()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

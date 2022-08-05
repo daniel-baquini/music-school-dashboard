@@ -1,10 +1,17 @@
 interface Plan {
-    courseName: string;
-    endDate: Date;
-    id?: number;
+    course: {
+        id: string;
+        name: string;
+    };
+    endDate: string;
+    id: string;
     isFinished: boolean;
-    startDate: Date;
-    studentName: string;
+    startDate: string;
+    student: {
+        id: string;
+        name: string;
+        surname: string;
+    };
     value: number;
 }
 

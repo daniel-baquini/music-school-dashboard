@@ -1,0 +1,31 @@
+<ui-form-step
+    [currentStep]="1"
+    [stepTitle]="'Fornecer um nome e uma descrição para o conteúdo'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<form class="grid" [formGroup]="this.form" [noValidate]="">
+    <div class="col-4">
+        <app-bordered-field 
+            [abstractControl]="this.form.controls.title"
+            formControlName="title"
+            [label]="'Título'"
+            [type]="'text'"
+        ></app-bordered-field>
+    </div>
+    <div class="col-8">
+        <app-bordered-field 
+            [abstractControl]="this.form.controls.description"
+            formControlName="description"
+            [label]="'Descrição (opcional)'"
+            [type]="'text'"
+        ></app-bordered-field>
+    </div>
+</form>
+
+<ui-buttons-row
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Próximo'"
+    (tertiaryButtonClick)="this.navigateToContentManagement()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

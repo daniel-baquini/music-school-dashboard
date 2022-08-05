@@ -1,12 +1,11 @@
 <app-default-data-page
     [links]="this.links"
-    [newRegistryLink]="'/students/plans/detail/new'"
+    [newRegistryLink]="'/students/plans/new'"
     [pageTitle]="'Alunos'"
 >
     <table>
         <thead>
             <tr>
-                <th></th>
                 <th>Aluno</th>
                 <th>Curso</th>
                 <th>Preço</th>
@@ -16,12 +15,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let plan of this.data">
-                <td></td>
                 <td
                     class="link-cell"
                     [routerLink]="'/students/plans/detail/' + plan.id"
-                >{{plan.studentName}}</td>
-                <td>{{plan.courseName}}</td>
+                >{{plan.student.name + " " + plan.student.surname}}</td>
+                <td>{{plan.course.name}}</td>
                 <td>{{plan.value | currency}}</td>
                 <td>{{plan.startDate | date: 'yyyy/MM/dd'}}</td>
                 <td>{{plan.endDate | date: 'yyyy/MM/dd'}}</td>

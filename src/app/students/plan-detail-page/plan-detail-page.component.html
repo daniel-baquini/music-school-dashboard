@@ -1,66 +1,71 @@
-<app-default-detail-page
-    [createCallback]="this.planService.create.bind(this.planService)"
-    [form]="this.form"
+<ui-default-detail-page
     [links]="this.links"
-    [loadDataCallback]="this.planService.read.bind(this.planService)"
-    *ngIf="!this.isLoading"
-    [pageTitle]="'Alunos'"
-    [returnLink]="'/students/plans'"
-    [updateCallback]="this.planService.update.bind(this.planService)"
+    [pageTitle]="this.pageTitle"
 >
-    <div class="grid" [formGroup]="this.form">
-        <div class="col-8">
-            <app-bordered-field 
-                [abstractControl]="this.form.controls['studentName']"
-                [fieldConfig]="{ data: this.studentsSelectData, type: 'select' }"
-                formControlName="studentName"
-                [label]="'Nome'"
-            ></app-bordered-field>
-        </div>
-        <div class="col-4">
-            <app-bordered-field 
-                [abstractControl]="this.form.controls['courseName']"
-                [fieldConfig]="{ data: this.coursesSelectData, type: 'select' }"
-                formControlName="courseName"
-                [label]="'Curso'"
-            ></app-bordered-field>
-        </div>
-        <div class="col-4">
-            <app-bordered-field 
-                [abstractControl]="this.form.controls['value']"
-                formControlName="value"
-                [label]="'Valor'"
-                [type]="'number'"
-            ></app-bordered-field>
-        </div>
-        <div class="col-4">
-            <app-bordered-field 
-                [abstractControl]="this.form.controls['startDate']"
-                formControlName="startDate"
-                [label]="'Data de início'"
-                [type]="'date'"
-            ></app-bordered-field>
-        </div>
-        <div class="col-4">
-            <app-bordered-field
-                [abstractControl]="this.form.controls['endDate']"
-                formControlName="endDate"
-                [label]="'Vencimento'"
-                [type]="'date'"
-            ></app-bordered-field>
-        </div>
-        <div class="col-4">
-            <app-radio-button-group 
-                [abstractControl]="this.form.controls['isFinished']"
-                [form]="this.form"
-                [formControlName]="'isFinished'"
-                [label]="'Plano concluído?'"
-                [radioValues]="[{ label: 'Não', value: false }, { label: 'Sim', value: true }]"
-            ></app-radio-button-group>
-        </div>
-    </div>
-</app-default-detail-page>
-<app-loading-modal
-    [message]="this.loadingMessage"
-    *ngIf="this.isLoading"
-></app-loading-modal>
+    <ui-loading-message
+        [label]="'Carregando dados do plano'"
+        *ngIf="this.isLoading"
+    ></ui-loading-message>
+    <ng-container *ngIf="!this.isLoading">
+        <form class="grid" [formGroup]="this.form" [noValidate]>
+            <ui-alert
+                [canClose]="false"
+                *ngIf="!!this.error"
+                [message]="this.error"
+                [type]="'error'"
+            ></ui-alert>
+            <div class="col-8">
+                <ui-bordered-field
+                    [disabled]="true"
+                    [label]="'Estudante'"
+                    [value]="this.form.controls.student.controls.name.value + ' ' + this.form.controls.student.controls.surname.value"
+                ></ui-bordered-field>
+            </div>
+            <div class="col-4">
+                <ui-bordered-field
+                    [disabled]="true"
+                    [label]="'Curso'"
+                    [value]="this.form.controls.course.controls.name.value"
+                ></ui-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-bordered-field 
+                    [abstractControl]="this.form.controls.value"
+                    formControlName="value"
+                    [label]="'Valor'"
+                    [type]="'number'"
+                ></app-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-bordered-field 
+                    [abstractControl]="this.form.controls.startDate"
+                    formControlName="startDate"
+                    [label]="'Data de início'"
+                    [type]="'date'"
+                ></app-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-bordered-field 
+                    [abstractControl]="this.form.controls.endDate"
+                    formControlName="endDate"
+                    [label]="'Data de vencimento'"
+                    [type]="'date'"
+                ></app-bordered-field>
+            </div>
+            <div class="col-4">
+                <app-radio-button-group
+                    [form]="this.form"
+                    [formControlName]="'isFinished'"
+                    [label]="'Plano concluído?'"
+                    [radioValues]="[{ label: 'Sim', value: true }, { label: 'Não', value: false }]"
+                ></app-radio-button-group>
+            </div>
+        </form>
+        <ui-buttons-row
+            (primaryButtonClick)="this.update()"
+            [primaryButtonLabel]="'Atualizar plano'"
+            (tertiaryButtonClick)="this.navigateToPlans()"
+            [tertiaryButtonLabel]="'Voltar'"
+        ></ui-buttons-row>
+    </ng-container>
+</ui-default-detail-page>

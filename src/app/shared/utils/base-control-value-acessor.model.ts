@@ -2,13 +2,13 @@ import { ControlValueAccessor } from "@angular/forms";
 
 class BaseControlValueAccessor<T = any> implements ControlValueAccessor {
     
-    onBaseChangeFn = (event: Event) => { }
+    onBaseChangeFn = (value: any) => { }
     onBaseTouchedFn = () => { }
     value: T | undefined;
     
     registerOnChange(fn: any): void {
-        this.onBaseChangeFn = (event: Event) => {
-            fn((event.target as HTMLInputElement).value)
+        this.onBaseChangeFn = (value: any) => {
+            fn(value)
         };
     }
 

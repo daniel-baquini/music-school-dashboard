@@ -1,0 +1,22 @@
+:host {
+    display: inline-block;
+}
+
+span {
+    color: var(--c-primary-60);
+    cursor: pointer;
+    transition: 250ms;
+}
+
+span:active {
+    color: var(--c-primary-90);
+}
+
+span:hover {
+    color: var(--c-primary-70);
+}
+
+span.disabled, span.disabled:active, span.disabled:hover  {
+    cursor: not-allowed;
+    opacity: 0.6;
+}

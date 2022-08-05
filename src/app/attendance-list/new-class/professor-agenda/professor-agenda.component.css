@@ -1,0 +1,55 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.agenda {
+    border: 1px solid var(--c-dark-10);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    height: 2500px;
+    overflow: auto;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.times {
+    color: var(--c-dark-60);
+    height: 100%;
+    position: relative;
+    width: 48px;
+}
+
+.times > * {
+    left: 50%;
+    position: absolute;    
+    transform: translate(-50%,-50%);
+}
+
+.classes {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.classes__markers {
+    display: contents;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.classes__markers > * {
+    background-color: var(--c-dark-10);
+    height: 1px;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.error-message {
+    color: var(--c-red-60);
+    padding-top: 8px;
+    text-align: center;
+}

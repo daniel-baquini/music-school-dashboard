@@ -1,0 +1,40 @@
+<ui-form-step
+    [currentStep]="3"
+    [stepTitle]="'Escolher professor'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<ui-loading-message
+    [label]="'Carregando professores'"
+    *ngIf="this.state.name === 'Searching'"
+></ui-loading-message>
+
+<ui-alert
+    *ngIf="this.state.name === 'No results'"
+    [message]="'Nenhum professor encontrado para este curso'"
+    [type]="'warning'"
+></ui-alert>
+
+<div
+    class="plans"
+    *ngIf="this.state.name === 'Show results' || this.state.name === 'Selected'"
+>
+    <ui-radio-button-card
+        (click)="this.onSelected(professor)"
+        [isActive]="professor.id === this.form.controls.professor.controls.id.value"
+        *ngFor="let professor of this.professors"
+    >
+        <div class="professor">
+            <img class="professor__photo" left-content [src]="professor.photoUrl"/>
+            <span class="professor__name text-preset-400" center-content>{{professor.name + " " + professor.surname}}</span>
+        </div>
+    </ui-radio-button-card>
+</div>
+
+<ui-buttons-row
+    *ngIf="this.state.name !== 'Searching'"
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Próximo'"
+    (tertiaryButtonClick)="this.navigateToPlan()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

@@ -1,31 +1,25 @@
 <app-default-data-page
     [links]="this.links"
-    [newRegistryLink]="'/content-management/detail/new'"
+    [newRegistryLink]="'/content-management/new'"
     [pageTitle]="'Gerenciador de conteúdo'"
 >
     <table>
         <thead>
             <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Curso</th>
                 <th></th>
-                <th>Aviso</th>
-                <th>Conteúdo</th>
-                <th>Data</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td>Andriy Belo Pegado</td>
-                <td>No dia 16/07/2022 estaremos fechados para reformas, agradecemos a compreensão.</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Diogo Bairros Amorim</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Levi Lage Belchior</td>
+            <tr *ngFor="let contentManagement of this.data">
+                <td>{{contentManagement.title}}</td>
+                <td>{{contentManagement.description}}</td>
+                <td>{{contentManagement.course.name}}</td>
+                <td>
+                    <a [href]="contentManagement.contentUrl" target="_blank">Link</a>
+                </td>
             </tr>
         </tbody>
     </table>

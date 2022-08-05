@@ -1,5 +1,5 @@
 import { BaseFormField } from '../../utils/base-form-field.component';
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, ElementRef, forwardRef, Input, ViewChild } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,8 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     ]
 })
 export class BorderedFieldComponent extends BaseFormField {
+
+    @ViewChild("field") field!: ElementRef<HTMLInputElement>
 
     @Input() fieldConfig: { type: "input" } |
     {

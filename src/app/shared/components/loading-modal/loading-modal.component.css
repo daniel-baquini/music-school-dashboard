@@ -31,13 +31,3 @@
 .modal-label {
     color: var(--c-dark-60);
 }
-
-@keyframes loading-icon {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}

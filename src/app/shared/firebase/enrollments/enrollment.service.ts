@@ -1,8 +1,10 @@
 import { DefaultFirestoreService } from '../default-firestore.service';
 import { DefaultStorageService } from '../default-storage.service';
 import Enrollment from './enrollment.model';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
+import generateIndexableArray from '../../utils/generate-indexable-array';
 import { Injectable } from '@angular/core';
+import { where } from '@angular/fire/firestore';
 
 @Injectable({
     providedIn: 'root'
@@ -17,7 +19,15 @@ export class EnrollmentService {
     ) { }
 
     async create(data: Enrollment) {
+        data.searchIndex = generateIndexableArray(data.name + " " + data.surname);
         this.defaultFirestore.create(this.PATH_TO_COLLECTION, data);
+    }
+
+    filter(searchTerm: string): Observable<Enrollment[]> {
+        return this.defaultFirestore.customQuery<Enrollment>(
+            this.PATH_TO_COLLECTION,
+            [where("searchIndex", "array-contains", searchTerm)]
+        )
     }
 
     async read(id: string): Promise<Enrollment | undefined> {
@@ -29,6 +39,7 @@ export class EnrollmentService {
     }
 
     update(data: Enrollment) {
+        data.searchIndex = generateIndexableArray(data.name + " " + data.surname);
         return this.defaultFirestore.update(this.PATH_TO_COLLECTION, data);
     }
 

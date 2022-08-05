@@ -1,7 +1,10 @@
 interface ContentManagement {
     contentUrl: string;
-    courseName: string;
-    contentType: "file" | "video";
+    course: {
+        id: string;
+        name: string;
+    };
+    contentType: "file" | "link";
     description: string;
     title: string;
 }

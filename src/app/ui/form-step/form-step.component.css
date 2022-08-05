@@ -1,0 +1,15 @@
+:host {
+    border-bottom: 1px solid var(--c-dark-10);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 8px;
+}
+
+.step-title {
+    color: var(--c-dark-60);
+}
+
+.steps {
+    color: var(--c-dark-40);
+}

@@ -1,0 +1,23 @@
+<ui-form-step
+    [currentStep]="4"
+    [stepTitle]="'Escolher um valor para o plano'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<form class="grid" [formGroup]="this.form" [noValidate]="">
+    <div class="col-4">
+        <app-bordered-field 
+            [abstractControl]="this.form.controls.value"
+            formControlName="value"
+            [label]="'Valor'"
+            [type]="'number'"
+        ></app-bordered-field>
+    </div>
+</form>
+
+<ui-buttons-row
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Gerar plano'"
+    (tertiaryButtonClick)="this.navigateToStartAndEnd()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

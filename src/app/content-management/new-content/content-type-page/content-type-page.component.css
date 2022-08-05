@@ -1,0 +1,22 @@
+:host {
+    display: contents;
+}
+
+.content-types {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.content-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-type__name {
+    color: var(--c-dark-60);
+}
+
+.content-type__description {
+    color: var(--c-dark-40);
+}

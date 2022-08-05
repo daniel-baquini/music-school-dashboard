@@ -9,9 +9,10 @@ import HTMLInputType from "./html-input-type.type";
 export class BaseFormField extends BaseControlValueAccessor<string> {
     
     @Input() abstractControl: AbstractControl | undefined;
+    @Input() disabled: boolean = false;
     @Input() helperText: string = "";
     @Input() label: string = "";
-    @Input() mask: ((s: string) => string) | undefined
+    @Input() maskUnmask: { mask: (value: any) => string, unmask: (value: string) => any } | undefined
     @Input() readOnly: boolean = false;
     @Input() type: HTMLInputType = "text";
     @Output() inputEvent = new EventEmitter<string>();
@@ -29,8 +30,8 @@ export class BaseFormField extends BaseControlValueAccessor<string> {
         return errorMessage;
     }
     
-    formFieldOnChange(event: Event): void {        
-        this.inputEvent.emit((event.target as HTMLInputElement).value);
-        this.onBaseChangeFn(event);
+    formFieldOnChange(value: any): void {
+        this.inputEvent.emit(value);
+        this.onBaseChangeFn(value);
     }
 }

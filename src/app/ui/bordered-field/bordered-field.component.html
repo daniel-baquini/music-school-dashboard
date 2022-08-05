@@ -1,0 +1,21 @@
+<div class="field-group">
+    <div class="field-group__label-wrapper">
+        <div class="label-wrapper__left-border"></div>
+        <span class="label-wrapper__label text-preset-290" *ngIf="this.label != ''">{{this.label}}</span>
+        <div class="label-wrapper__right-border"></div>
+    </div>
+    <div class="field-group__input-wrapper">
+        <input
+            (blur)="this.onBlur($event)"
+            class="text-preset-400"
+            [disabled]="this.disabled"
+            #field
+            (focus)="this.onFocus($event)"
+            (input)="this.onInput($event)"
+            [(ngModel)]="this.value"
+            [readonly]="this.readOnly"
+            [type]="this.type"
+        >
+    </div>
+</div>
+<span class="error-message text-preset-360">{{this.error}}</span>

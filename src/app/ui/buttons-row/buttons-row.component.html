@@ -1,0 +1,11 @@
+<ui-tertiary-button
+    (click)="this.tertiaryButtonClick.emit()"
+    [disabled]="this.tertiaryButtonDisabled"
+    [label]="this.tertiaryButtonLabel"
+></ui-tertiary-button>
+<ui-primary-button
+    (click)="this.primaryButtonClick.emit()"
+    [disabled]="this.primaryButtonDisabled"
+    [label]="this.primaryButtonLabel"
+    *ngIf="this.primaryButtonShow"
+></ui-primary-button>

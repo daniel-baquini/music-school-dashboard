@@ -1,4 +1,4 @@
-<div class="field-group">
+<!-- <div class="field-group">
     <div class="field-group__label-wrapper">
         <div class="label-wrapper__left-border"></div>
         <span class="label-wrapper__label text-preset-290" *ngIf="this.label != ''">{{this.label}}</span>
@@ -6,7 +6,8 @@
     </div>
     <div class="field-group__input-wrapper">
         <input
-            class="text-preset-400"            
+            class="text-preset-400"
+            #field
             (focus)="this.onBaseTouchedFn()"
             (input)="this.formFieldOnChange($event)"
             *ngIf="this.fieldConfig.type === 'input'"
@@ -33,4 +34,16 @@
         ></textarea>
     </div>
 </div>
-<span class="error-message text-preset-360">{{this.error}}</span>
+<span class="error-message text-preset-360">{{this.error}}</span> -->
+<ui-bordered-field
+    [disabled]="this.disabled"
+    [error]="this.error"
+    #field
+    (focus)="this.onBaseTouchedFn()"
+    (inputValue)="this.formFieldOnChange($event)"
+    [label]="this.label"
+    [maskUnmask]="this.maskUnmask"
+    [(ngModel)]="this.value"
+    [readOnly]="this.readOnly"
+    [type]="this.type"
+></ui-bordered-field>

@@ -1,0 +1,55 @@
+:host {
+    display: block;
+}
+
+.host {
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 24px;
+    width: 100%;
+}
+
+.host.error {
+    background-color: var(--c-red-60);
+}
+
+.host.success {
+    background-color: var(--c-green-60);
+}
+
+.host.warning {
+    background-color: var(--c-yellow-60);
+}
+
+.message-icon {
+    display: none;
+}
+
+.host.error > .icon-error {
+    display: block;
+}
+
+.host.success > .icon-check-filled {
+    display: block;
+}
+
+.host.warning > .icon-warning-filled {
+    display: block;
+}
+
+.message-icon, .close-icon  {
+    color: var(--c-white-10);
+    font-size: 32px;
+}
+
+.close-icon {
+    cursor: pointer;
+}
+
+.message {
+    color: var(--c-white-10);
+    flex: 1;
+}

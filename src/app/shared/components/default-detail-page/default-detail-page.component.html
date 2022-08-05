@@ -6,7 +6,7 @@
         <ng-content></ng-content>
         <div class="buttons-row">
             <span class="tertiary-button text-preset-350" [routerLink]="this.returnLink">Cancelar</span>
-            <app-primary-button (click)="this.createOrUpdate()" [label]="this.primaryButtonLabel"></app-primary-button>
+            <app-primary-button (click)="this.createOrUpdate()" [label]="this._primaryButtonLabel"></app-primary-button>
         </div>
     </div>
 </app-default-page>

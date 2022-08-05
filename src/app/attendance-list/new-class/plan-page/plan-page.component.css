@@ -1,0 +1,22 @@
+:host {
+    display: contents;
+}
+
+.plans {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan__course-name {
+    color: var(--c-dark-60);
+}
+
+.plan__duration {
+    color: var(--c-dark-40);
+}

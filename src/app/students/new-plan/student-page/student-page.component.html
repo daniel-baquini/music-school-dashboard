@@ -1,0 +1,53 @@
+<ui-form-step
+    [currentStep]="1"
+    [stepTitle]="'Escolher estudante'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<app-search-field
+    (fetchedEvent)="this.onFetched($event)"
+    (inputEvent)="this.onInput($event)"
+    [label]="'Pesquisar'"
+    [searchCallback]="this.bindedEnrollmentFilter"
+    (searchingStartedEvent)="this.onSearching()"
+></app-search-field>
+
+<span
+    class="hint text-preset-390"
+    *ngIf="this.state.name === 'Idle'"
+>Digite um nome no campo de pesquisa para exibir resultados</span>
+
+<ui-loading-message
+    [label]="'Carregando estudantes'"
+    *ngIf="this.state.name === 'Searching'"
+></ui-loading-message>
+
+<ui-alert
+    *ngIf="this.state.name === 'No results'"
+    [message]="'Nenhum resultado encontrado com base na pesquisa'"
+    [type]="'warning'"
+></ui-alert>
+
+<div
+    class="students"
+    *ngIf="this.state.name === 'Show results' || this.state.name === 'Selected'"
+>
+    <ui-radio-button-card
+        (click)="this.onSelected(enrollment)"
+        [isActive]="enrollment.id === this.form.controls.student.controls.id.value"
+        *ngFor="let enrollment of this.enrollments"
+    >
+        <div class="student">
+            <img class="student__photo" left-content [src]="this.enrollment.photoUrl"/>
+            <span class="student__name text-preset-400" center-content>{{this.enrollment.name + " " + this.enrollment.surname}}</span>
+        </div>
+    </ui-radio-button-card>
+</div>
+
+<ui-buttons-row
+    *ngIf="this.state.name !== 'Loading'"
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Próximo'"
+    (tertiaryButtonClick)="this.navigateToPlans()"
+    [tertiaryButtonLabel]="'Cancelar'"
+></ui-buttons-row>

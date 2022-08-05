@@ -1,0 +1,36 @@
+<div class="agenda">
+    <div class="times">
+        <span
+            class="text-preset-290"
+            *ngFor="let step of this.getRangeInSteps(0, 24, 0.5)"
+            [ngStyle]="{ 'top': step*120 + 'px' }"
+            style="top: 30px"
+        >{{this.numberToStrHour(step)}}</span>
+    </div>
+    
+    <div class="classes">
+        <div class="classes__markers">
+            <div
+                *ngFor="let step of this.getRangeInSteps(0, 24, 0.25)"
+                [ngStyle]="{ 'top': (step*120) + 'px' }"
+            ></div>
+            <div [ngStyle]="{ 'top': 24.25*120 + 'px' }" style="opacity: 0;"></div>
+        </div>
+        <app-class-post-it
+            *ngFor="let time of this.unavaliableTimes"
+            [ngStyle]="{'height': (((time.end) - (time.start))*120) + 'px', 'top': time.start*120 + 'px' }"
+            [timeInterval]="time"
+        ></app-class-post-it>
+        <app-class-post-it
+            *ngIf="this.newClassInterval"
+            [ngStyle]="{'height': ((this.newClassInterval.end - this.newClassInterval.start)*120) + 'px',
+                        'left': '256px',
+                        'top': this.newClassInterval.start*120 + 'px'}"
+            [timeInterval]="this.newClassInterval"
+        ></app-class-post-it>
+    </div>
+</div>
+<span
+    class="error-message text-preset-360"
+    *ngIf="this.newClass && !this.isTimeAvaliable(this.newClass)"
+>Este horário de aula não está disponível</span>

@@ -1,0 +1,26 @@
+:host {
+    display: contents;
+}
+
+.professors {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.professor {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+.professor__photo {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.professor__name {
+    color: var(--c-dark-80);
+}

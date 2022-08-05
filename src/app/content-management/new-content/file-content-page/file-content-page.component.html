@@ -1,0 +1,35 @@
+<ui-form-step
+    [currentStep]="4"
+    [stepTitle]="'Faça envio do arquivo'"
+    [stepsQuantity]="4"
+></ui-form-step>
+
+<ui-alert
+    [canClose]="true"
+    (close)="this.showFileRequiredAlert = false"
+    *ngIf="this.showFileRequiredAlert"
+    [message]="'É necessário escolher um arquivo'"
+></ui-alert>
+
+<ui-loading-message
+    [label]="this.fileUploadingLabel"
+    *ngIf="this.showSendingFile"
+></ui-loading-message>
+
+<ui-loading-message
+    [label]="'Salvando conteúdo'"
+    *ngIf="this.showModelUploading"
+></ui-loading-message>
+
+<app-file-upload
+    #fileUpload
+    [ngStyle]="{ 'display': this.showModelUploading || this.showSendingFile ? 'none' : 'flex'}"
+></app-file-upload>
+
+<ui-buttons-row
+    *ngIf="!(this.showModelUploading || this.showSendingFile)"
+    (primaryButtonClick)="this.onNextStep()"
+    [primaryButtonLabel]="'Salvar conteúdo'"
+    (tertiaryButtonClick)="this.navigateToContentType()"
+    [tertiaryButtonLabel]="'Voltar'"
+></ui-buttons-row>

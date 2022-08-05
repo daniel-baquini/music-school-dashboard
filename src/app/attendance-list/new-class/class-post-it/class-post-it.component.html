@@ -1,0 +1,12 @@
+<ng-container *ngIf="this.timeInterval">
+    <div class="status {{this.timeInterval.type}}"></div>
+    <div class="class-data" *ngIf="this.timeInterval.type !== 'break' && this.timeInterval.type !== 'not-avaliable'">
+        <div class="class-data_student-data">
+            <span class="student-data__name text-preset-340">{{this.timeInterval.studentName}}</span>
+            <span class="student-data__class text-preset-290">{{this.timeInterval.courseName}}</span>
+        </div>
+    </div>
+    <span class="status-description text-preset-290" *ngIf="this.timeInterval.type === 'break' || this.timeInterval.type === 'not-avaliable'">
+        {{this.timeInterval.type === "break" ? "Intervalo" : "Fora do horário de serviço"}}
+    </span>
+</ng-container>

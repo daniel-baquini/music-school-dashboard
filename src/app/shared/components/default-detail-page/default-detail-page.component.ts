@@ -10,13 +10,14 @@ import TopMenuLink from '../top-menu/top-menu-link.model';
 })
 export class DefaultDetailPageComponent implements OnInit {
     
-    @Input() beforeCreateCallback: undefined | (() => Promise<boolean>)
-    @Input() beforeUpdateCallback: undefined | (() => boolean)
+    @Input() beforeCreateCallback: undefined | ((model: any) => Promise<boolean>)
+    @Input() beforeUpdateCallback: undefined | ((model: any) => boolean)
     @Input() createCallback: undefined | ((model: any) => Promise<void>);
     @Input() form: FormGroup | undefined;
     @Input() links: TopMenuLink[] = [];
     @Input() loadDataCallback: undefined | ((id: string) => Promise<any>)
     @Input() pageTitle: string = "";
+    @Input() primaryButtonLabel: string | undefined = "";
     @Input() returnLink: string = "";
     @Input() updateCallback: undefined | ((model: any) => Promise<void>);
 
@@ -39,7 +40,11 @@ export class DefaultDetailPageComponent implements OnInit {
         }
     }
 
-    get primaryButtonLabel(): string {
+    get _primaryButtonLabel(): string {
+        if(this.primaryButtonLabel) {
+            return this.primaryButtonLabel;
+        }
+        
         return this.isNew ? "Adicionar" : "Atualizar";
     }
 
@@ -49,24 +54,25 @@ export class DefaultDetailPageComponent implements OnInit {
             return;
         }
 
-        this.isNew ? await this.create() : await this.update();
+        const model: any = this.form!.value;
+        this.isNew ? await this.create(model) : await this.update(model);
         this.router.navigateByUrl(this.returnLink);
     }
 
-    private async create(): Promise<void> {
-        if(this.beforeCreateCallback && !await this.beforeCreateCallback()) {
+    private async create(model: any): Promise<void> {
+        if(this.beforeCreateCallback && !await this.beforeCreateCallback(model)) {
             return;
         }
 
-        this.createCallback!(this.form!.value)
+        this.createCallback!(model)
     }
     
-    private async update(): Promise<void> {
-        if(this.beforeUpdateCallback && !this.beforeUpdateCallback()) {
+    private async update(model: any): Promise<void> {
+        if(this.beforeUpdateCallback && !this.beforeUpdateCallback(model)) {
             return;
         }
 
-        this.updateCallback!(this.form!.value)
+        this.updateCallback!(model)
     }
 
 }
