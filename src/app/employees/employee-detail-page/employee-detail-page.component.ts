@@ -33,6 +33,7 @@ export class EmployeeDetailComponent  {
             this.form = formBuilder.group({
                 "courses": new FormControl([]),
                 "email": new FormControl("", [validator.email]),
+                "id": new FormControl(""),
                 "name": new FormControl("", [validator.name]),
                 "photoUrl": new FormControl(""),
                 "surname": new FormControl("", [validator.surname]),

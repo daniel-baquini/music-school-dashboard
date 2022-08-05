@@ -32,7 +32,7 @@ export class ProfessorAgendaComponent implements OnChanges, OnInit {
     }
 
     get workingTime(): undefined | WorkingTime {
-        if(!this.weekday) {
+        if(this.weekday === undefined) {
             return undefined;
         }
 
@@ -84,6 +84,7 @@ export class ProfessorAgendaComponent implements OnChanges, OnInit {
     }
 
     private updateUnavaliableTimes(): void {
+        console.log("current:", this.weekday)
         this.unavaliableTimes = [{ courseName: "", end: 24, start: 0, studentName: "", type: "not-avaliable" }];
         const workingTime = this.workingTime;
 

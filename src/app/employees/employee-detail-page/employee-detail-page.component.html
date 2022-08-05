@@ -5,6 +5,7 @@
     [loadDataCallback]="this.employeeService.read.bind(this.employeeService)"
     [pageTitle]="'Colaboradores'"
     [returnLink]="'/employees/employees'"
+    [updateCallback]="this.employeeService.update.bind(this.employeeService)"
 >
     <div class="grid" [formGroup]="this.form">
         <div class="col-8">

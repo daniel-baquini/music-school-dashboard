@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/music-school-app",
+    "public": "dist/music-school-dashboard",
     "ignore": [
       "firebase.json",
       "**/.*",
